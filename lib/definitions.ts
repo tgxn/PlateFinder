@@ -5,6 +5,22 @@ import { PlatePrefixList } from "./types";
 // Western Australian General Format
 export const generalFormatRegex = /^([0-2]{1})([A-Z]{3})[-\s]?([0-9]{3})$/;
 
+// TODO
+
+/**
+ * https://en.wikipedia.org/wiki/Vehicle_registration_plates_of_Western_Australia
+ *
+ * - Motorcycles have the plate 1aa-nnn (e.g.: 1AB-123).
+ *
+ * also, https://cl.pinterest.com/pin/western-australia-home-of-the-americas-cup--514747432387446577/
+ *
+ * - Stock Carrying Trucks have 'ST' as the second & third letters of the prefix; e.g., 6ST-123, 9ST-123, 1STA-123.
+ *
+ *
+ *
+ *
+ */
+
 // https://warego.au/#organisation
 export const generalPlateYears = {
   A: "1990's",
@@ -24,11 +40,17 @@ export const matchGeneralPrefix = {
   "1T": {
     name: "Trailers",
   },
+  "1U": {
+    name: "Trailers",
+  },
   "1Z": {
     name: "Licensed vehicle repairers / mechanics / dealers",
   },
   "1F": {
     name: "Vanity Plate Purchase Only",
+  },
+  "1Y": {
+    name: "Hire Vehicle",
   },
 };
 
@@ -48,11 +70,21 @@ export const specialPlatePrefix: PlatePrefixList = {
     name: "Interchangeable",
   },
   TC: {
-    name: "Tourist Coach",
+    name: "Touring Coach",
   },
   TAXI: {
     name: "Taxi Cab",
   },
+  CT: {
+    name: "Taxi Cab (Non-Metro)",
+  },
+  SCV: {
+    name: "Charter Vehicle",
+  },
+  CVL: {
+    name: "Charter Vehicle",
+  },
+
   WAC: {
     name: "Commonwealth Games",
   },
@@ -365,7 +397,7 @@ export const orgCharityPlatePrefix: PlatePrefixList = {
     name: "Princess Margaret Hospital",
   },
   PT: {
-    name: "Peel Thunder Football Club",
+    name: "Peel Thunder Football Club (or Private Taxi)",
   },
   QRFB: {
     name: "Quinns Rock Volunteer Bushfire Brigade",
@@ -539,9 +571,9 @@ export const townShirePlatePrefix: PlatePrefixList = {
   },
 
   // from source
-  AU: {
-    name: "Augusta",
-  },
+  //   AU: { // DUPE
+  //     name: "Augusta",
+  //   },
   AW: {
     name: "West Arthur",
   },
@@ -567,7 +599,7 @@ export const townShirePlatePrefix: PlatePrefixList = {
     name: "Binningup",
   },
   BU: {
-    name: "Boyup Brook",
+    name: "Blackwood Upper (Boyup Brook)",
   },
   BWK: {
     name: "Brunswick Junction",
@@ -582,7 +614,7 @@ export const townShirePlatePrefix: PlatePrefixList = {
     name: "Clackline",
   },
   CN: {
-    name: "Dryandra Country",
+    name: "Dryandra Country (Cuballing)",
   },
   COW: {
     name: "Cowaramup",
@@ -611,9 +643,9 @@ export const townShirePlatePrefix: PlatePrefixList = {
   DN: {
     name: "Dandaragan",
   },
-  DS: {
-    name: "Dundas",
-  },
+  //   DS: { // DUPE
+  //     name: "Dundas",
+  //   },
   DU: {
     name: "Dumbleyung",
   },
@@ -668,9 +700,9 @@ export const townShirePlatePrefix: PlatePrefixList = {
   KO: {
     name: "Kojonup",
   },
-  KT: {
-    name: "Shire of Kent (Nyabing / Pingrup)",
-  },
+  //   KT: { // dupe
+  //     name: "Shire of Kent (Nyabing / Pingrup)",
+  //   },
   KUK: {
     name: "Kukerin",
   },
@@ -692,9 +724,9 @@ export const townShirePlatePrefix: PlatePrefixList = {
   MA: {
     name: "Mount Magnet",
   },
-  MBL: {
-    name: "Mukinbudin Brown Lake",
-  },
+  //   MBL: {
+  //     name: "Mukinbudin Brown Lake",
+  //   },
   MM: {
     name: "Mount Marshall",
   },
@@ -809,9 +841,9 @@ export const townShirePlatePrefix: PlatePrefixList = {
   W: {
     name: "Wagin (Woolorama)",
   },
-  WA: {
-    name: "Manjimup Shire (Warren)",
-  },
+  //   WA: {
+  //     name: "Manjimup Shire (Warren)",
+  //   },
   WKM: {
     name: "Wickham",
   },
@@ -886,9 +918,9 @@ export const districtPlatePrefix: PlatePrefixList = {
   BT: {
     name: "Boddington",
   },
-  BU: {
-    name: "Blackwood Upper (Boyup Brook)",
-  },
+  //   BU: {
+  //     name: "Blackwood Upper (Boyup Brook)",
+  //   },
   BY: {
     name: "Bunbury",
   },
@@ -920,9 +952,9 @@ export const districtPlatePrefix: PlatePrefixList = {
   CMT: {
     name: "Cunderdin - Meckering (Tammin)",
   },
-  CN: {
-    name: "Cuballing",
-  },
+  //   CN: { //dupe
+  //     name: "Cuballing",
+  //   },
   CO: {
     name: "Collie",
   },
@@ -993,7 +1025,7 @@ export const districtPlatePrefix: PlatePrefixList = {
     name: "Goomalling",
   },
   GU: {
-    name: "Gascoyne Upper",
+    name: "Upper Gascoyne",
   },
   H: {
     name: "Harvey",
@@ -1071,7 +1103,7 @@ export const districtPlatePrefix: PlatePrefixList = {
     name: "Mt. Magnet",
   },
   MBL: {
-    name: "Mukinbudin - Bonnie Rock - Lake Brown",
+    name: "Mukinbudin - Bonnie Rock - Lake Brown (Brown Lake)",
   },
   MD: {
     name: "Merredin",
@@ -1115,9 +1147,9 @@ export const districtPlatePrefix: PlatePrefixList = {
   NB: {
     name: "Narembeen",
   },
-  NGN: {
-    name: "Narrogin (Town Council)",
-  },
+  //   NGN: {
+  //     name: "Narrogin (Town Council)",
+  //   },
   NGT: {
     name: "Newdegate",
   },

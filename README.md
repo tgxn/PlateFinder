@@ -16,6 +16,8 @@ https://leewardpro.com/articles/licplatefonts/licplate-fonts-aust.html
 
 http://www.worldlicenseplates.com/world/AU_WAXX.html
 
+https://web.archive.org/web/20120313005521/http://www.regionalwa.com.au/WAinfo/TT_CountryCars.htm
+
 ## Attributions
 
 ### Font
