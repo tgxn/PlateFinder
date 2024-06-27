@@ -5,6 +5,33 @@ import { PlatePrefixList } from "./types";
 // Western Australian General Format
 export const generalFormatRegex = /^([0-2]{1})([A-Z]{3})[-\s]?([0-9]{3})$/;
 
+// https://warego.au/#organisation
+export const generalPlateYears = {
+  A: "1990's",
+  B: "2002",
+  D: "2009",
+  E: "2015",
+  G: "2017",
+  H: "2020",
+  I: "2023",
+};
+
+// these are part of the general prpose format
+export const matchGeneralPrefix = {
+  "1Q": {
+    name: "government vehicles",
+  },
+  "1T": {
+    name: "Trailers",
+  },
+  "1Z": {
+    name: "Licensed vehicle repairers / mechanics / dealers",
+  },
+  "1F": {
+    name: "Vanity Plate Purchase Only",
+  },
+};
+
 // https://warego.au/#district
 // Must be checked before general plate format
 export const specialPlatePrefix: PlatePrefixList = {
@@ -12,17 +39,25 @@ export const specialPlatePrefix: PlatePrefixList = {
     name: "TransPerth (Bus)",
     desc: "https://www.perthbus.info/index.php",
   },
-  "1Q": {
-    name: "government vehicles",
-  },
-  "1T": {
-    name: "trailers",
-  },
   WPC: {
     name: "Western Power Corporation",
   },
-  "1Z": {
-    name: "Licensed vehicle repairers / mechanics",
+
+  // i added
+  IT: {
+    name: "Interchangeable",
+  },
+  TC: {
+    name: "Tourist Coach",
+  },
+  TAXI: {
+    name: "Taxi Cab",
+  },
+  WAC: {
+    name: "Commonwealth Games",
+  },
+  TRA: {
+    name: "Telstra Rally Australia",
   },
 };
 
@@ -32,6 +67,9 @@ export const orgCharityPlatePrefix: PlatePrefixList = {
   // ADDED MORE
   PCH: {
     name: "Perth Childrens Hospital Foundation",
+  },
+  EFA: {
+    name: "Equestrian Excellence",
   },
 
   // from warego.au (147 on 27/6/24)
@@ -435,7 +473,9 @@ export const orgCharityPlatePrefix: PlatePrefixList = {
     name: "Vic Park Xavier Hockey Club",
   },
   WAC: {
-    name: "Freemasonry - Charity and Fraternity",
+    // name: "Freemasonry - Charity and Fraternity",
+    // i have only seen this as Commonwealth Games
+    name: "Commonwealth Games",
   },
   WAFC: {
     name: "Whitford Amateur Football Club",
@@ -487,6 +527,15 @@ export const townShirePlatePrefix: PlatePrefixList = {
   },
   KE: {
     name: "Kellerberrin",
+  },
+  HRP: {
+    name: "Hutt River Principality",
+  },
+  BG: {
+    name: "Bridgetown Greenbushes",
+  },
+  PCC: {
+    name: "Perth City",
   },
 
   // from source
@@ -807,9 +856,9 @@ export const districtPlatePrefix: PlatePrefixList = {
   AW: {
     name: "West Arthur",
   },
-  B: {
-    name: "Bridgetown",
-  },
+  //   B: {
+  //     name: "Bridgetown",
+  //   },
   BD: {
     name: "Boulder",
   },
