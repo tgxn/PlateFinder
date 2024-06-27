@@ -1,6 +1,10 @@
+[![publish-pages](https://github.com/tgxn/PlateFinder/actions/workflows/publish-pages.yaml/badge.svg)](https://github.com/tgxn/PlateFinder/actions/workflows/publish-pages.yaml)
+
 # Plate Number Lookup
 
 Simple UI to lookup where a Western Australian license plate is from.
+
+![alt text](image.png)
 
 ## Data Sources
 
