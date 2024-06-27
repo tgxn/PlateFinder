@@ -1,0 +1,72 @@
+name: publish-pages
+
+on:
+  # Runs on pushes targeting the default branch
+  push:
+    branches:
+      - main
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
+# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+
+  publish_pages:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v3
+
+      - name: Use Node.js 18.15.0
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18.15.0
+     
+      # build frontend
+      - name: Cache NPM Modules
+        id: cache-npm
+        uses: actions/cache@v3
+        env:
+          cache-name: cache-npm
+        with:
+          path: ./node_modules/
+          key: cache-npm-${{ hashFiles('yarn-lock.json') }}
+
+      - name: Install Dependencies
+        if: steps.cache-npm.outputs.cache-hit != 'true'
+        run: yarn install
+        working-directory: ./
+        
+      - name: Build the Frontend
+        run: yarn build
+        working-directory: ./
+
+      # upload pages
+      - name: upload github pages artifacts
+        uses: actions/upload-pages-artifact@v1
+        with:
+          path: ./dist/
+          
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v2
