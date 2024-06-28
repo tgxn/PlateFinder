@@ -79,7 +79,7 @@ body {
   }
 
   .resultContainer {
-    height: 100px;
+    height: 125px;
     width: 500px;
 
     color: #333;
@@ -111,6 +111,11 @@ body {
       font-size: 17px;
       padding: 0;
       margin: 0;
+    }
+
+    .plateExampleImage {
+      // width: 500px;
+      max-height: 70px;
     }
   }
 }

@@ -7,6 +7,9 @@ export const generalFormatRegex = /^([0-2]{1})([A-Z]{3})[-\s]?([0-9]{3})$/;
 
 export const generalBikeFormatRegex = /^([0-2]{1})([A-Z]{2})[-\s]?([0-9]{3})$/;
 
+export const generalNumberPlateImage =
+  "http://www.plateshack.com/y2k/Western_Australia/westaus2014.jpg";
+
 // TODO
 
 /**
@@ -37,7 +40,9 @@ export const generalPlateYears = {
 // these are part of the general prpose format
 export const matchGeneralPrefix = {
   "1Q": {
-    name: "government vehicles",
+    name: "Government",
+    desc: "Series 1QAA-000 - 1QSZ-999 and 1QXA-000 - 1QZZ-999",
+    image: "http://www.plate-planet.com/images/plates/Fotobatch-77330-kl.gif",
   },
   "1T": {
     name: "Trailers",
@@ -46,7 +51,25 @@ export const matchGeneralPrefix = {
     name: "Trailers",
   },
   "1Z": {
+    // TODO can also be farm vehicle,,, probably only certain prefixes
     name: "Licensed vehicle repairers / mechanics / dealers",
+    image: "http://www.plateshack.com/y2k/Western_Australia/wafarm.jpg",
+
+    // images: [
+    //   {
+    //     src: "http://www.plateshack.com/y2k/Western_Australia/wafarm.jpg",
+    //     credit:
+    //       "www.plateshack.com/y2k/We stern_Australia/westernaustralia.html",
+    //   },
+    //   {
+    //     src: "http://www.plate-planet.com/images/plates/Fotobatch-188229-kl.gif",
+    //     credit: "http://www.plate-planet.com/homepage.htm",
+    //   },
+    //   {
+    //     src: "http://www.plate-planet.com/images/plates/Fotobatch-74164-kl.gif",
+    //     credit: "http://www.plate-planet.com/homepage.htm",
+    //   },
+    // ],
   },
   "1F": {
     name: "Vanity Plate Purchase Only",
@@ -55,6 +78,7 @@ export const matchGeneralPrefix = {
   },
   "1Y": {
     name: "Hire Vehicle",
+    image: "http://www.plate-planet.com/images/plates/Fotobatch-85615-kl.gif",
   },
 };
 
@@ -67,6 +91,7 @@ export const specialPlatePrefix: PlatePrefixList = {
   },
   WPC: {
     name: "Western Power Corporation",
+    image: "http://www.plate-planet.com/images/plates/Fotobatch-188312-kl.gif",
   },
 
   // i added
@@ -74,16 +99,21 @@ export const specialPlatePrefix: PlatePrefixList = {
     name: "Interchangeable",
   },
   TC: {
-    name: "Touring Coach",
+    name: "Touring Coach / Transport Commission",
+    image: "http://www.plate-planet.com/images/plates/Fotobatch-56433-kl.gif",
+    // image: "http://www.plate-planet.com/images/plates/Fotobatch-120067-kl.gif",
   },
   TAXI: {
     name: "Taxi Cab",
+    image: "http://www.plate-planet.com/images/plates/Fotobatch-77323-kl.gif",
   },
   CT: {
     name: "Taxi Cab (Non-Metro)",
+    image: "http://www.plate-planet.com/images/plates/Fotobatch-99458-kl.gif",
   },
   SCV: {
     name: "Charter Vehicle",
+    image: "http://www.plateshack.com/y2k/Western_Australia/wasmallcharter.jpg",
   },
   CVL: {
     name: "Charter Vehicle",
@@ -94,6 +124,7 @@ export const specialPlatePrefix: PlatePrefixList = {
   },
   TRA: {
     name: "Telstra Rally Australia",
+    image: "http://www.plate-planet.com/images/plates/Fotobatch-74013-kl.gif",
   },
 };
 
@@ -106,6 +137,54 @@ export const orgCharityPlatePrefix: PlatePrefixList = {
   },
   EFA: {
     name: "Equestrian Excellence",
+  },
+
+  AI: {
+    name: "Land Speed Challenge",
+    image:
+      "http://www.plateshack.com/y2k/Western_Australia/waspeedchallenge.jpg",
+  },
+  CSC: {
+    name: "Western Australia Celtic Club Supporters",
+    image:
+      "http://www.plateshack.com/y2k/Western_Australia/westauscelticclub.jpg",
+  },
+  LAS: {
+    name: "Lasts Transit (Corporate Plate)",
+    image: "http://www.plateshack.com/y2k/Western_Australia/walaststransit.jpg",
+  },
+  MFC: {
+    name: "Melbourne Football Club",
+    image: "http://www.plateshack.com/y2k/Western_Australia/wamelbournefc.jpg",
+  },
+  RR: {
+    name: "Motorcycle Racing Club of Western Australia",
+    image: "http://www.plateshack.com/y2k/Western_Australia/wamcracingclub.jpg",
+  },
+  BRS: {
+    name: "Pilbara Black Rock Stakes Wheelbarrow race",
+    image: "http://www.plateshack.com/y2k/Western_Australia/wapilbara.jpg",
+  },
+  RFC: {
+    name: "Richmond Football Club",
+    image:
+      "http://www.plateshack.com/y2k/Western_Australia/warichmondfooty2018.jpg",
+  },
+  YEARS: {
+    name: "Western Australia Centenary of Federation plate issued in 2001",
+    image: "http://www.plateshack.com/y2k/Western_Australia/wafederation.jpg",
+  },
+  RSL: {
+    name: "Returned Services League",
+    image: "http://www.plate-planet.com/images/plates/Fotobatch-188228-kl.gif",
+  },
+  VC: {
+    name: "Variety Club of Western Australia",
+    image: "http://www.plate-planet.com/images/plates/Fotobatch-188248-kl.gif",
+  },
+  ASSET: {
+    name: "ASSET SERVICES - Total Buillding Maintenance",
+    image: "http://www.plate-planet.com/images/plates/Fotobatch-188185-kl.gif",
   },
 
   // from warego.au (147 on 27/6/24)
@@ -186,6 +265,7 @@ export const orgCharityPlatePrefix: PlatePrefixList = {
   },
   CAT: {
     name: "Cat Haven",
+    image: "http://www.plateshack.com/y2k/Western_Australia/wacat2019.jpg",
   },
   CC: {
     name: "WA Consulate Corps",
@@ -236,7 +316,8 @@ export const orgCharityPlatePrefix: PlatePrefixList = {
     name: "Bridgetown Bulldogs Football Club",
   },
   DFC: {
-    name: "Manjimup Deanmill Football Club",
+    name: "Manjimup Deanmill (Donnybrook) Football Club",
+    image: "http://www.plate-planet.com/images/plates/Fotobatch-177368-kl.gif",
   },
   DUCK: {
     name: "Dunsborough DUCKS Football Club",
@@ -255,21 +336,27 @@ export const orgCharityPlatePrefix: PlatePrefixList = {
   },
   FD: {
     name: "Fremantle Dockers",
+    image:
+      "http://www.plateshack.com/y2k/Western_Australia/wafreemantledockers2020.jpg",
   },
   FLY: {
     name: "The Royal Aero Club of WA",
   },
   FSC: {
     name: "Fremantle Sailing Club",
+    image: "http://www.plate-planet.com/images/plates/Fotobatch-188201-kl.gif",
   },
   FSR: {
     name: "Fremantle Sea Rescue",
   },
   GBYC: {
     name: "Geographe Bay Yacht Club",
+    image: "http://www.plate-planet.com/images/plates/Fotobatch-44038-kl.gif",
   },
   GCS: {
     name: "Geraldton City Speedway",
+    image:
+      "http://www.plateshack.com/y2k/Western_Australia/wageraldtonspwy.jpg",
   },
   GD: {
     name: "Guide Dogs WA",
@@ -291,6 +378,7 @@ export const orgCharityPlatePrefix: PlatePrefixList = {
   },
   GSP: {
     name: "German Shorthaired Pointer Club",
+    image: "http://www.plate-planet.com/images/plates/Fotobatch-188214-kl.gif",
   },
   GYC: {
     name: "Geraldton Yacht Club",
@@ -377,13 +465,16 @@ export const orgCharityPlatePrefix: PlatePrefixList = {
     name: "North Cottesloe Surf Life Saving Club",
   },
   NFC: {
-    name: "Newdegate Football Club",
+    name: "Newdegate (or Northampton) Football Club",
+    image:
+      "http://www.plateshack.com/y2k/Western_Australia/wanorthamptonfc.jpg",
   },
   OK: {
     name: "Bridgetown Blues Festival",
   },
   PAW: {
     name: "RSCPA",
+    image: "http://www.plate-planet.com/images/plates/Fotobatch-188219-kl.gif",
   },
   PBC: {
     name: "Perth Baseball Club",
@@ -396,9 +487,11 @@ export const orgCharityPlatePrefix: PlatePrefixList = {
   },
   PG: {
     name: "Perth Glory",
+    image: "http://www.plate-planet.com/images/plates/Fotobatch-188298-kl.gif",
   },
   PMH: {
     name: "Princess Margaret Hospital",
+    image: "http://www.plate-planet.com/images/plates/Fotobatch-74020-kl.gif",
   },
   PT: {
     name: "Peel Thunder Football Club (or Private Taxi)",
@@ -420,18 +513,23 @@ export const orgCharityPlatePrefix: PlatePrefixList = {
   },
   RCS: {
     name: "Rottnest Channel Swim",
+    image: "http://www.plateshack.com/y2k/Western_Australia/warottnest.jpg",
   },
   RCSA: {
     name: "Rottnest Channel Swim Association",
   },
   RFCA: {
     name: "Railways Football Club Albany",
+    image:
+      "http://www.plateshack.com/y2k/Western_Australia/warailwaysfooty2018.jpg",
   },
   RFSC: {
     name: "Royals Football and Sporting Cub (Albany)",
   },
   RNC: {
     name: "Rockingham Navy Club",
+    image:
+      "http://www.plateshack.com/y2k/Western_Australia/wesrausnavyclub.jpg",
   },
   ROW: {
     name: "Penrhos College Rowing",
@@ -468,6 +566,8 @@ export const orgCharityPlatePrefix: PlatePrefixList = {
   },
   SPYC: {
     name: "South Perth Yacht Club",
+    image: "http://www.plate-planet.com/images/plates/Fotobatch-188311-kl.gif",
+    // image: "http://www.plate-planet.com/images/plates/Fotobatch-74149-kl.gif",
   },
   SRC: {
     name: "Swanleigh Residential College",
@@ -477,6 +577,7 @@ export const orgCharityPlatePrefix: PlatePrefixList = {
   },
   SSRL: {
     name: "South Sydney Supporters Club",
+    image: "http://www.plateshack.com/y2k/Western_Australia/wasouthsyd.jpg",
   },
   SWIM: {
     name: "Masters Swimming WA",
@@ -501,6 +602,7 @@ export const orgCharityPlatePrefix: PlatePrefixList = {
   },
   VFF: {
     name: "Volunteer Fire Fighters",
+    image: "http://www.plateshack.com/y2k/Western_Australia/wavff.jpg",
   },
   VMX: {
     name: "Vintage Motorcross",
@@ -510,8 +612,9 @@ export const orgCharityPlatePrefix: PlatePrefixList = {
   },
   WAC: {
     // name: "Freemasonry - Charity and Fraternity",
-    // i have only seen this as Commonwealth Games
+    // i have only seen this as Commonwealth Games ahh now i have seen both (wac as a suffix)
     name: "Commonwealth Games",
+    image: "http://www.plate-planet.com/images/plates/Fotobatch-188258-kl.gif",
   },
   WAFC: {
     name: "Whitford Amateur Football Club",
@@ -524,12 +627,15 @@ export const orgCharityPlatePrefix: PlatePrefixList = {
   },
   WBFC: {
     name: "Western Bulldogs Football Club",
+    image: "http://www.plateshack.com/y2k/Western_Australia/wabulldogs2021.jpg",
   },
   WBR: {
     name: "Wally Boys Racing",
   },
   WCE: {
     name: "West Coast Eagles",
+    image:
+      "http://www.plateshack.com/y2k/Western_Australia/wawestcoasteagle.jpg",
   },
   WDR: {
     name: "West Side Drag Racing Association",
@@ -539,6 +645,7 @@ export const orgCharityPlatePrefix: PlatePrefixList = {
   },
   WFC: {
     name: "Wagin Football Club / Watheroo Football Club",
+    image: "http://www.plateshack.com/y2k/Western_Australia/wawatherloofc.jpg",
   },
   WGC: {
     name: "Wanneroo Golf Club",
@@ -566,6 +673,7 @@ export const townShirePlatePrefix: PlatePrefixList = {
   },
   HRP: {
     name: "Hutt River Principality",
+    image: "http://www.plate-planet.com/images/plates/Fotobatch-79455-kl.gif",
   },
   BG: {
     name: "Bridgetown Greenbushes",
@@ -574,12 +682,23 @@ export const townShirePlatePrefix: PlatePrefixList = {
     name: "Perth City",
   },
 
+  GOS: {
+    name: "Gosnells City",
+    image:
+      "http://www.plateshack.com/y2k/Western_Australia/wesausgosnells2021.jpg",
+  },
+  NAT: {
+    name: "Cape Naturaliste",
+    image: "http://www.plateshack.com/y2k/Western_Australia/wacape2017.jpg",
+  },
+
   // from source
   //   AU: { // DUPE
   //     name: "Augusta",
   //   },
   AW: {
     name: "West Arthur",
+    image: "http://www.plateshack.com/y2k/Western_Australia/washirearthur.jpg",
   },
   B: {
     name: "Bridgetown",
@@ -622,16 +741,19 @@ export const townShirePlatePrefix: PlatePrefixList = {
   },
   COW: {
     name: "Cowaramup",
+    image: "http://www.plateshack.com/y2k/Western_Australia/wacowramup.jpg",
   },
   CRJ: {
     name: "Clackline Railway Junction",
+    image:
+      "http://www.plateshack.com/y2k/Western_Australia/wa2021clackline.jpg",
   },
-  DB: {
-    name: "Donnybrook",
-  },
-  DE: {
-    name: "Denmark",
-  },
+  // DB: {
+  //   name: "Donnybrook",
+  // },
+  // DE: {
+  //   name: "Denmark",
+  // },
   DL: {
     name: "Dalwallinu",
   },
@@ -692,9 +814,9 @@ export const townShirePlatePrefix: PlatePrefixList = {
   HY: {
     name: "Hyden",
   },
-  IR: {
-    name: "Irwin",
-  },
+  // IR: {
+  //   name: "Irwin",
+  // },
   KM: {
     name: "Kalamunda",
   },
@@ -709,6 +831,7 @@ export const townShirePlatePrefix: PlatePrefixList = {
   //   },
   KUK: {
     name: "Kukerin",
+    image: "http://www.plateshack.com/y2k/Western_Australia/wakukerin.jpg",
   },
   KW: {
     name: "Shire of Derby / Kimberley West",
@@ -751,6 +874,7 @@ export const townShirePlatePrefix: PlatePrefixList = {
   },
   NA: {
     name: "Nungarin",
+    image: "http://www.plateshack.com/y2k/Western_Australia/wanungarin.jpg",
   },
   NB: {
     name: "Narembeen",
@@ -763,12 +887,14 @@ export const townShirePlatePrefix: PlatePrefixList = {
   },
   NGT: {
     name: "Newdegate",
+    image: "http://www.plateshack.com/y2k/Western_Australia/wanewmachinery.jpg",
   },
   OF: {
     name: "Ocean Farm, Nilgen",
   },
   ONG: {
     name: "Ongerup",
+    image: "http://www.plateshack.com/y2k/Western_Australia/waongerup.jpg",
   },
   PB: {
     name: "Port Bouvard",
@@ -790,6 +916,8 @@ export const townShirePlatePrefix: PlatePrefixList = {
   },
   PL: {
     name: "Plantagenet (Mount Barker)",
+    image:
+      "http://www.plateshack.com/y2k/Western_Australia/waplantegenetshire.jpg",
   },
   PS: {
     name: "Point Sampson",
@@ -805,9 +933,6 @@ export const townShirePlatePrefix: PlatePrefixList = {
   },
   SB: {
     name: "Shark Bay",
-  },
-  SBK: {
-    name: "Spencer's Brook",
   },
   SCDN: {
     name: "Scadden",
@@ -836,18 +961,21 @@ export const townShirePlatePrefix: PlatePrefixList = {
   VLY: {
     name: "Varley",
   },
-  VP: {
-    name: "Victoria Plains",
-  },
+  // VP: {
+  //   name: "Victoria Plains",
+  // },
   VPK: {
     name: "Victoria Park",
+    image: "http://www.plate-planet.com/images/plates/Fotobatch-188144-kl.gif",
   },
   W: {
     name: "Wagin (Woolorama)",
+    image: "http://www.plate-planet.com/images/plates/Fotobatch-65224-kl.gif",
   },
-  //   WA: {
-  //     name: "Manjimup Shire (Warren)",
-  //   },
+  WA: {
+    name: "Manjimup Shire (Warren)",
+    image: "http://www.plate-planet.com/images/plates/Fotobatch-188148-kl.gif",
+  },
   WKM: {
     name: "Wickham",
   },
@@ -879,19 +1007,22 @@ export const districtPlatePrefix: PlatePrefixList = {
   },
   AK: {
     name: "Armadale - Kelmscott",
+    image: "http://www.plate-planet.com/images/plates/Fotobatch-160002-kl.gif",
   },
   AL: {
     name: "Albany",
+    image: "http://www.plateshack.com/y2k/Western_Australia/waalbany.jpg",
   },
   AS: {
     name: "Ashburton",
+    image: "http://www.plate-planet.com/images/plates/Fotobatch-188004-kl.gif",
   },
   AU: {
     name: "Augusta - Margaret River",
   },
-  AW: {
-    name: "West Arthur",
-  },
+  // AW: {
+  //   name: "West Arthur",
+  // },
   //   B: {
   //     name: "Bridgetown",
   //   },
@@ -900,6 +1031,7 @@ export const districtPlatePrefix: PlatePrefixList = {
   },
   BE: {
     name: "Beverley",
+    image: "http://www.plateshack.com/y2k/Western_Australia/wabeverley.jpg",
   },
   BH: {
     name: "Broomehill",
@@ -930,12 +1062,14 @@ export const districtPlatePrefix: PlatePrefixList = {
   },
   C: {
     name: "Carnarvon",
+    image: "http://www.plate-planet.com/images/plates/Fotobatch-159247-kl.gif",
   },
   CA: {
     name: "Carnamah",
   },
   CB: {
     name: "Cranbrook",
+    image: "http://www.plate-planet.com/images/plates/Fotobatch-188047-kl.gif",
   },
   CD: {
     name: "Cue Daydawn",
@@ -951,6 +1085,7 @@ export const districtPlatePrefix: PlatePrefixList = {
   },
   CM: {
     name: "Cunderdin - Meckering",
+    image: "http://www.plateshack.com/y2k/Western_Australia/wa2016CM1416.jpg",
   },
   // +1 split from CM(T)
   CMT: {
@@ -982,6 +1117,7 @@ export const districtPlatePrefix: PlatePrefixList = {
   },
   DB: {
     name: "Donnybrook - Balingup",
+    image: "http://www.plateshack.com/y2k/Western_Australia/westaustralia.JPG",
   },
   DE: {
     name: "Denmark",
@@ -1023,6 +1159,7 @@ export const districtPlatePrefix: PlatePrefixList = {
   },
   GN: {
     name: "Gnowangerup (with dot), Geraldton (no dot)",
+    image: "http://www.plateshack.com/y2k/Western_Australia/wabatavia2021.jpg",
   },
   GNG: {
     name: "Geraldton - Greenough",
@@ -1041,15 +1178,19 @@ export const districtPlatePrefix: PlatePrefixList = {
   },
   IR: {
     name: "Irwin",
+    image: "http://www.plateshack.com/y2k/Western_Australia/washireirwin.jpg",
   },
   JP: {
     name: "Jerramungup",
+    image: "http://www.plateshack.com/y2k/Western_Australia/wasoldier.jpg",
   },
   KA: {
     name: "Katanning",
   },
   KBC: {
     name: "Kalgoorlie - Boulder",
+    image:
+      "http://www.plateshack.com/y2k/Western_Australia/au-wakalgoorlie.jpg",
   },
   KBMC: {
     name: "Kalgoorlie Boulder Municipal Council",
@@ -1095,6 +1236,7 @@ export const districtPlatePrefix: PlatePrefixList = {
   },
   L: {
     name: "Leonora",
+    image: "http://www.plateshack.com/y2k/Western_Australia/waleeonora.jpg",
   },
   LA: {
     name: "Laverton",
@@ -1104,6 +1246,7 @@ export const districtPlatePrefix: PlatePrefixList = {
   },
   M: {
     name: "Moora",
+    image: "http://www.plateshack.com/y2k/Western_Australia/wamoorashire.jpg",
   },
   MA: {
     name: "Mt. Magnet",
@@ -1116,6 +1259,8 @@ export const districtPlatePrefix: PlatePrefixList = {
   },
   MDG: {
     name: "Mundaring",
+    image:
+      "http://www.plateshack.com/y2k/Western_Australia/westausmundaring.jpg",
   },
   MH: {
     name: "Mandurah",
@@ -1156,9 +1301,9 @@ export const districtPlatePrefix: PlatePrefixList = {
   //   NGN: {
   //     name: "Narrogin (Town Council)",
   //   },
-  NGT: {
-    name: "Newdegate",
-  },
+  // NGT: {
+  //   name: "Newdegate",
+  // },
   NO: {
     name: "Narrogin (Road Board)",
   },
@@ -1176,10 +1321,11 @@ export const districtPlatePrefix: PlatePrefixList = {
   },
   PJ: {
     name: "Perenjori",
+    image: "http://www.plateshack.com/y2k/Western_Australia/wa,peronjori.jpg",
   },
-  PL: {
-    name: "Plantagenet (Mount Barker)",
-  },
+  // PL: {
+  //   name: "Plantagenet (Mount Barker)",
+  // },
   PN: {
     name: "Pingelly",
   },
@@ -1203,6 +1349,7 @@ export const districtPlatePrefix: PlatePrefixList = {
   },
   SJ: {
     name: "Serpentine - Jarradale",
+    image: "http://www.plateshack.com/y2k/Western_Australia/wa2016-SJ4643.jpg",
   },
   SW: {
     name: "Swan",
@@ -1221,9 +1368,12 @@ export const districtPlatePrefix: PlatePrefixList = {
   },
   TS: {
     name: "Three Springs",
+    image:
+      "http://www.plateshack.com/y2k/Western_Australia/wa2021threesprings.jpg",
   },
   VP: {
     name: "Victoria Plains",
+    image: "http://www.plate-planet.com/images/plates/Fotobatch-160286-kl.gif",
   },
   W: {
     name: "Wagin",
@@ -1233,15 +1383,18 @@ export const districtPlatePrefix: PlatePrefixList = {
   },
   WB: {
     name: "Wongan - Ballidu",
+    image: "http://www.plate-planet.com/images/plates/Fotobatch-160300-kl.gif",
   },
   WD: {
     name: "Wandering",
   },
   WK: {
     name: "Wickepin",
+    image: "http://www.plate-planet.com/images/plates/Fotobatch-160307-kl.gif",
   },
   WL: {
     name: "Williams",
+    image: "http://www.plate-planet.com/images/plates/Fotobatch-160324-kl.gif",
   },
   WM: {
     name: "Wyalkatchem",

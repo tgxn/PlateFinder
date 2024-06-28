@@ -54,7 +54,12 @@ function RenderPlateResult({
     );
   }
 
-  return <div className="resultContainer">{plateResult.name}</div>;
+  return (
+    <div className="resultContainer">
+      <span className="headerText">{plateResult.name}</span>
+      <img className="plateExampleImage" src={plateResult.image} />
+    </div>
+  );
 }
 
 import "./scss/App.scss";

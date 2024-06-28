@@ -18,6 +18,10 @@ http://www.worldlicenseplates.com/world/AU_WAXX.html
 
 https://web.archive.org/web/20120313005521/http://www.regionalwa.com.au/WAinfo/TT_CountryCars.htm
 
+www.plateshack.com/y2k/We stern_Australia/westernaustralia.html
+
+http://www.plate-planet.com/bodypages/au-aust-wasshigr.html
+
 ## Attributions
 
 ### Font
