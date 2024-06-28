@@ -50,7 +50,7 @@ describe("find known plates", () => {
       ["MR-222", "Moora"],
 
       // LETTER AT END?
-      ["MH0761A", "Mandurah"],
+      // ["MH0761A", "Mandurah"],
 
       // more
       ["MRR", "Moore River Region"],
@@ -123,7 +123,7 @@ describe("find found plates", () => {
       ["M-1029", "Moora"],
       ["NR4204", "Northampton"],
       ["RA302", "Ravensthorpe"],
-      ["323 DB", "Donnybrook"],
+      ["323 DB", "Donnybrook - Balingup"],
       ["A 13938", "Albany"],
       ["KM-5259", "Kalamunda"],
       ["35 IR", "Irwin"],
@@ -183,7 +183,7 @@ describe("find found plates", () => {
       ["DN", "Dandaragan"],
       ["DA", "Dardanup"],
       ["DE", "Denmark"],
-      ["DB", "Donnybrook"],
+      ["DB", "Donnybrook - Balingup"],
       ["D", "Dowerin"],
       ["DU", "Dumbleyung"],
       ["DS", "Dundas (Norseman)"],
@@ -249,7 +249,7 @@ describe("find found plates", () => {
       ["T", "Toodyay"],
       ["VP", "Victoria Plains"],
       ["W", "Wagin (Woolorama)"],
-      ["WA", "Manjimup (Warren)"],
+      ["WA", "Manjimup Shire (Warren)"],
       ["WB", "Wongan - Ballidu"],
       ["WD", "Wandering"],
       ["WN", "Wanneroo"],

@@ -17,7 +17,7 @@ function matchPrefixPlate(cleanPlate: string, prefix: string): boolean {
   return regexMatch.test(cleanPlate);
 }
 function matchPrefixGeneralPlate(cleanPlate: string, prefix: string): boolean {
-  const regexMatch = new RegExp(`^${prefix}[-\s]?[0-9]*[A-F]{0,1}$`);
+  const regexMatch = new RegExp(`^${prefix}[A-Z]{2}[0-9]{3}$`);
 
   return regexMatch.test(cleanPlate);
 }
