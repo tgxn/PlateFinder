@@ -1,74 +1,116 @@
 @font-face {
   font-family: "Licenz";
-  src: local("Licenz"), url("../../public/fonts/Licenz.ttf") format("truetype"), url("../../public/fonts/Licenz.otf") format("opentype");
+  src: local("Licenz"), url("../../public/fonts/Licenz.ttf") format("truetype"),
+    url("../../public/fonts/Licenz.otf") format("opentype");
 }
 
-// CONTAINER
+body {
+  background-image: url("../../public/checkback.png");
+}
+
 .appContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   height: 100vh;
-}
 
-// HEADER
-.headerImage {
-  width: 140px;
-  height: 50px;
-}
-.headerText {
-  font-size: 20px;
-  padding: 0;
-  margin: 0;
-}
-
-// INPUT LABEL
-.inputLabel {
-  position: relative;
-}
-.inputLabel::after {
-  content: attr(data-domain);
-  position: absolute;
-  top: 8px;
-  width: 50px;
-  //   left: calc((510px / 2) - (50px / 2));
-  left: calc(50% - 25px);
   font-family: arial, helvetica, sans-serif;
-  font-size: 15px;
-  display: block;
-  color: black;
-  font-weight: bold;
-  text-align: center;
-}
 
-// INPUT
-.inputField {
-  position: relative;
-  display: block;
-  //   padding-right: 76px;
-  width: 174px;
-  box-sizing: border-box;
-  margin: 0;
+  .inputContainer {
+    text-align: center;
+    background-color: #f8f8ee;
 
-  color: #333;
-  background-color: #f8f8ee;
-  font-family: "Licenz", Arial, sans-serif;
-  font-size: 100px;
-  font-weight: bold;
-  text-transform: uppercase;
-  text-align: center;
-  //   padding-bottom: 5px;
-  padding-top: 20px;
-  padding-bottom: 0px;
-  width: 510px;
-  border: 5px solid #033fc0;
-  border-radius: 15px;
-  outline: none;
-}
+    border: 1px solid #033fc0;
+    border-radius: 15px;
 
-.resultBox {
-  font-size: 20px;
-  padding: 10px;
-  margin: 10px;
+    padding: 2px;
+    margin-bottom: 15px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+
+    .inputBorder {
+      color: #333;
+      background-color: #f8f8ee;
+      border: 5px solid #033fc0;
+      border-radius: 15px;
+      outline: none;
+
+      .inputLabel {
+        font-size: 15px;
+        display: block;
+        color: black;
+        font-weight: bold;
+        text-align: center;
+      }
+
+      .inputSpacer {
+        height: 88px;
+        overflow: clip;
+        margin-bottom: 10px;
+
+        .inputField {
+          width: 510px;
+          height: 110px;
+
+          line-height: 1.1;
+
+          color: #333;
+          background: transparent;
+
+          font-family: "Licenz", Arial, sans-serif;
+          font-size: 100px;
+          font-weight: bold;
+          text-transform: uppercase;
+          text-align: center;
+
+          // padding-top: 30px;
+          // padding-bottom: -10ppx;
+
+          box-sizing: border-box;
+          margin: 0;
+          // margin-top: 4px;
+          // margin-bottom: 6px;
+
+          border: none;
+          outline: none;
+        }
+      }
+    }
+  }
+
+  .resultContainer {
+    height: 100px;
+    width: 500px;
+
+    color: #333;
+    background-color: #eee;
+
+    padding: 4px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid black;
+    border-radius: 10px;
+    font-size: 20px;
+
+    width: 510px;
+
+    // HEADER
+    .headerImage {
+      width: 140px;
+      height: 50px;
+    }
+    .headerText {
+      font-size: 20px;
+      padding: 0;
+      margin: 0;
+    }
+    .headerSubText {
+      font-size: 17px;
+      padding: 0;
+      margin: 0;
+    }
+  }
 }

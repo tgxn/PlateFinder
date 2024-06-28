@@ -1,4 +1,10 @@
-import { generalFormatRegex, specialPlatePrefix, orgCharityPlatePrefix, townShirePlatePrefix, districtPlatePrefix } from "../definitions";
+import {
+  generalFormatRegex,
+  specialPlatePrefix,
+  orgCharityPlatePrefix,
+  townShirePlatePrefix,
+  districtPlatePrefix,
+} from "../definitions";
 
 import { findPlate } from "../find";
 
@@ -42,6 +48,9 @@ describe("find known plates", () => {
       ["MR222", "Moora"],
       ["MR 222", "Moora"],
       ["MR-222", "Moora"],
+
+      // LETTER AT END?
+      ["MH0761A", "Mandurah"],
 
       // more
       ["MRR", "Moore River Region"],

@@ -1,6 +1,15 @@
 import { PlateDefintion, PlatePrefixList } from "./types";
 
-import { generalFormatRegex, generalPlateYears, specialPlatePrefix, matchGeneralPrefix, orgCharityPlatePrefix, townShirePlatePrefix, districtPlatePrefix } from "./definitions";
+import {
+  generalFormatRegex,
+  generalBikeFormatRegex,
+  generalPlateYears,
+  specialPlatePrefix,
+  matchGeneralPrefix,
+  orgCharityPlatePrefix,
+  townShirePlatePrefix,
+  districtPlatePrefix,
+} from "./definitions";
 
 function matchPrefixPlate(cleanPlate: string, prefix: string): boolean {
   const regexMatch = new RegExp(`^${prefix}[-\s]?[0-9]*$`);
@@ -8,7 +17,7 @@ function matchPrefixPlate(cleanPlate: string, prefix: string): boolean {
   return regexMatch.test(cleanPlate);
 }
 function matchPrefixGeneralPlate(cleanPlate: string, prefix: string): boolean {
-  const regexMatch = new RegExp(`^${prefix}[-\s]?[0-9A-F]*$`);
+  const regexMatch = new RegExp(`^${prefix}[-\s]?[0-9]*[A-F]{0,1}$`);
 
   return regexMatch.test(cleanPlate);
 }
@@ -19,7 +28,10 @@ function matchSuffixPlate(cleanPlate: string, suffix: string): boolean {
   return regexMatch.test(cleanPlate);
 }
 
-function checkPlateList(cleanPlate: string, prefixList: PlatePrefixList): PlateDefintion | null {
+function checkPlateList(
+  cleanPlate: string,
+  prefixList: PlatePrefixList,
+): PlateDefintion | null {
   // check for org/charity plates
   for (const [key, value] of Object.entries(prefixList)) {
     if (cleanPlate.startsWith(key) && matchPrefixPlate(cleanPlate, key)) {
@@ -32,10 +44,16 @@ function checkPlateList(cleanPlate: string, prefixList: PlatePrefixList): PlateD
 
   return null;
 }
-function checkGeneralPrefix(cleanPlate: string, prefixList: PlatePrefixList): PlateDefintion | null {
+function checkGeneralPrefix(
+  cleanPlate: string,
+  prefixList: PlatePrefixList,
+): PlateDefintion | null {
   // works slightly different, cause it can be also a general purpose plate
   for (const [key, value] of Object.entries(prefixList)) {
-    if (cleanPlate.startsWith(key) && matchPrefixGeneralPlate(cleanPlate, key)) {
+    if (
+      cleanPlate.startsWith(key) &&
+      matchPrefixGeneralPlate(cleanPlate, key)
+    ) {
       return value;
     }
   }
@@ -47,25 +65,37 @@ export function findPlate(partialPlate: string): PlateDefintion | null {
   // generalize to uppercase, strip everything special for spoaces
   let cleanPlate = partialPlate.trim().toUpperCase().replace(/\s/g, "");
 
-  const checkSpecialPlatePrefix = checkPlateList(cleanPlate, specialPlatePrefix);
+  const checkSpecialPlatePrefix = checkPlateList(
+    cleanPlate,
+    specialPlatePrefix,
+  );
   if (checkSpecialPlatePrefix) {
     return checkSpecialPlatePrefix;
   }
 
   // check for org/charity plates
-  const checkOrgCharityPlatePrefix = checkPlateList(cleanPlate, orgCharityPlatePrefix);
+  const checkOrgCharityPlatePrefix = checkPlateList(
+    cleanPlate,
+    orgCharityPlatePrefix,
+  );
   if (checkOrgCharityPlatePrefix) {
     return checkOrgCharityPlatePrefix;
   }
 
   // check for town/shire plates
-  const checkTownShirePlatePrefix = checkPlateList(cleanPlate, townShirePlatePrefix);
+  const checkTownShirePlatePrefix = checkPlateList(
+    cleanPlate,
+    townShirePlatePrefix,
+  );
   if (checkTownShirePlatePrefix) {
     return checkTownShirePlatePrefix;
   }
 
   // check for district plates
-  const checkDistrictPlatePrefix = checkPlateList(cleanPlate, districtPlatePrefix);
+  const checkDistrictPlatePrefix = checkPlateList(
+    cleanPlate,
+    districtPlatePrefix,
+  );
   if (checkDistrictPlatePrefix) {
     return checkDistrictPlatePrefix;
   }
@@ -77,6 +107,10 @@ export function findPlate(partialPlate: string): PlateDefintion | null {
   }
 
   // check for general plates
+  if (generalBikeFormatRegex.test(cleanPlate)) {
+    return { name: "Motorbike Plate" };
+  }
+
   if (generalFormatRegex.test(cleanPlate)) {
     // check the second letter against the map generalPlateYears
     const yearData = cleanPlate.substring(1, 2);

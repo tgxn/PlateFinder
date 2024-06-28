@@ -5,6 +5,8 @@ import { PlatePrefixList } from "./types";
 // Western Australian General Format
 export const generalFormatRegex = /^([0-2]{1})([A-Z]{3})[-\s]?([0-9]{3})$/;
 
+export const generalBikeFormatRegex = /^([0-2]{1})([A-Z]{2})[-\s]?([0-9]{3})$/;
+
 // TODO
 
 /**
@@ -48,6 +50,8 @@ export const matchGeneralPrefix = {
   },
   "1F": {
     name: "Vanity Plate Purchase Only",
+    image:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/2016_Western_Australia_registration_plate_1FAB212_slimline_platinum.jpg/200px-2016_Western_Australia_registration_plate_1FAB212_slimline_platinum.jpg",
   },
   "1Y": {
     name: "Hire Vehicle",
@@ -835,7 +839,7 @@ export const townShirePlatePrefix: PlatePrefixList = {
   VP: {
     name: "Victoria Plains",
   },
-  VPk: {
+  VPK: {
     name: "Victoria Park",
   },
   W: {
@@ -981,6 +985,8 @@ export const districtPlatePrefix: PlatePrefixList = {
   },
   DE: {
     name: "Denmark",
+    image:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/1990s_Western_Australia_Regional_Plate%2C_89_DE%2C_Denmark.jpg/200px-1990s_Western_Australia_Regional_Plate%2C_89_DE%2C_Denmark.jpg",
   },
   DL: {
     name: "Dalwallinu",
@@ -1263,6 +1269,8 @@ export const districtPlatePrefix: PlatePrefixList = {
   },
   Y: {
     name: "York",
+    image:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/2000_Western_Australia_registration_plate_Y%E2%80%A26642_York.jpg/200px-2000_Western_Australia_registration_plate_Y%E2%80%A26642_York.jpg",
   },
   YA: {
     name: "Yalgoo",
