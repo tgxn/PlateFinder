@@ -45,10 +45,10 @@ function RenderPlateResult({
   if (plateResult === null) {
     return (
       <div className="resultContainer">
-        <span className="headerText">WA Plate Lookup</span>
         <img src="lib.png" alt="logo" className="headerImage" />
+        <span className="headerText">WA Registration Plate Lookup</span>
         <span className="headerSubText">
-          lets you identify where most WA number plates are from
+          Enter a interesting or regional plate, to find out where it's from!
         </span>
       </div>
     );
