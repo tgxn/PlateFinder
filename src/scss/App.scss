@@ -17,6 +17,76 @@ body {
 
   font-family: arial, helvetica, sans-serif;
 
+  // minimalistic link info should be fixed at the bottom of the page, centre aligned
+  .navLinks {
+    position: absolute;
+    bottom: 0;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+
+    a {
+      color: #333;
+      text-decoration: underline;
+      cursor: pointer;
+      font-style: italic;
+      padding-right: 10px;
+    }
+    a:hover {
+      color: #000;
+      font-weight: bold;
+    }
+
+    // hidden by default, unless combined with .show, this element isa full-screen popup
+    .aboutContainer.show {
+      display: flex;
+    }
+    .aboutContainer {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 1;
+
+      // centre the content
+      // display: flex;
+      justify-content: center;
+      align-items: center;
+
+      // the actual content
+      .aboutContent {
+        background-color: #f8f8ee;
+        border: 1px solid #033fc0;
+        border-radius: 15px;
+        padding: 20px;
+        width: 80%;
+        max-width: 800px;
+        box-shadow: 2px 2px 3px 0 rgba(0, 0, 0, 0.6);
+
+        // close button
+        .closeButton {
+          position: absolute;
+          top: 10px;
+          right: 10px;
+          font-size: 20px;
+          cursor: pointer;
+        }
+
+        // content
+        .aboutText {
+          font-size: 20px;
+          text-align: center;
+        }
+      }
+    }
+  }
+
   .inputContainer {
     text-align: center;
     background-color: #f8f8ee;
@@ -121,6 +191,39 @@ body {
     .plateExampleImage {
       // width: 500px;
       max-height: 70px;
+    }
+  }
+
+  /// should have a media query for smaller screens to resize the inputs and font sizes
+  @media (max-width: 650px) {
+    .inputContainer {
+      .inputBorder {
+        .inputLabel {
+          font-size: 12px;
+        }
+        .inputSpacer {
+          height: 65px;
+          .inputField {
+            width: 400px;
+            height: 80px;
+            font-size: 70px;
+          }
+        }
+      }
+    }
+
+    .resultContainer {
+      width: 400px;
+      font-size: 15px;
+      .headerText {
+        font-size: 20px;
+      }
+      .headerSubText {
+        font-size: 15px;
+      }
+      .plateExampleImage {
+        max-height: 50px;
+      }
     }
   }
 }

@@ -62,6 +62,99 @@ function RenderPlateResult({
   );
 }
 
+// this is a minimalistic list of links to things
+export function NavLinks() {
+  const [aboutOpen, setAboutOpen] = useState<boolean>(false);
+
+  // if the popup is open, register a click and kb listenenr
+  // we should close on click (not on a a link_click) and if the user presses key on kb
+  useEffect(() => {
+    if (aboutOpen) {
+      const onClick = (e: MouseEvent) => {
+        if (
+          (e.target as HTMLElement).closest(".aboutContainer") &&
+          (e.target as HTMLElement).classList.contains("aboutContainer")
+        ) {
+          console.log("click", e.target);
+          setAboutOpen(false);
+        }
+      };
+
+      const onKeyDown = (e: KeyboardEvent) => {
+        if (e.key === "Escape") {
+          console.log("escape");
+          setAboutOpen(false);
+        }
+      };
+
+      document.addEventListener("click", onClick);
+      document.addEventListener("keydown", onKeyDown);
+
+      return () => {
+        document.removeEventListener("click", onClick);
+        document.removeEventListener("keydown", onKeyDown);
+      };
+    }
+  }, [aboutOpen]);
+
+  return (
+    <div className="navLinks">
+      <div className={`aboutContainer${aboutOpen ? " show" : ""}`}>
+        <div className="aboutContent">
+          <div>
+            <h3>PlateFinder</h3>
+            <p>
+              A simple tool to find out where a Western Australian number plates
+              are from.
+            </p>
+          </div>
+          <div>
+            <p>
+              Made by{" "}
+              <a href="https://github.com/tgxn" target="_blank">
+                tgxn
+              </a>
+              <br />
+              <br />
+              Credits
+              <ul className="creditsList">
+                <li>
+                  <a href="https://warego.au/" target="_blank">
+                    WARego.au
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.transport.wa.gov.au/licensing/district-series-plates.asp"
+                    target="_blank"
+                  >
+                    Transport WA
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://leewardpro.com/articles/licplatefonts/licplate-fonts-aust.html"
+                    target="_blank"
+                  >
+                    Font
+                  </a>
+                </li>
+              </ul>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <a onClick={() => setAboutOpen(!aboutOpen)} target="_blank">
+        about / credits
+      </a>
+      <a href="https://github.com/tgxn/PlateFinder" target="_blank">
+        github / source
+      </a>
+    </div>
+  );
+}
+
 import "./scss/App.scss";
 
 export default function App() {
@@ -77,6 +170,7 @@ export default function App() {
     <div className="appContainer">
       <NumberPlateInput plateInput={plateInput} setPlateInput={setPlateInput} />
       <RenderPlateResult plateInput={plateInput} plateResult={plateResult} />
+      <NavLinks />
     </div>
   );
 }
