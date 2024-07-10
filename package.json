@@ -10,7 +10,7 @@
     "test:lib": "jest lib/**/*.spec.ts",
     "test:ui": "./node_modules/.bin/playwright test",
     "test:ui:watch": "./node_modules/.bin/playwright test --ui",
-    "fetch:warego": "node lib/source/fetch-warego.js"
+    "fetch": "node lib/source/index.js"
   },
   "dependencies": {
     "axios": "^1.7.2",

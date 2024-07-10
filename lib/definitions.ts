@@ -1,6 +1,8 @@
-import { PlatePrefixList } from "./types";
+import { PlateDefintion, PlatePrefixList } from "./types";
 
-// https://warego.au/#district
+/*/
+  General Format
+/*/
 
 // Western Australian General Format
 export const generalFormatRegex = /^([0-2]{1})([A-Z]{3})[-\s]?([0-9]{3})$/;
@@ -9,6 +11,44 @@ export const generalBikeFormatRegex = /^([0-2]{1})([A-Z]{2})[-\s]?([0-9]{3})$/;
 
 export const generalNumberPlateImage =
   "http://www.plateshack.com/y2k/Western_Australia/westaus2014.jpg";
+
+// https://warego.au/#organisation
+export const generalPlateYears = {
+  A: "1990's",
+  B: "2002",
+  D: "2009",
+  E: "2015",
+  G: "2017",
+  H: "2020",
+  I: "2023",
+};
+
+export const regexDefs: PlateDefintion[] = [
+  {
+    type: "general",
+    name: "General Format",
+    desc: "Series 1AAA-000 - 2ZZZ-999",
+    images: [
+      {
+        src: "http://www.plateshack.com/y2k/Western_Australia/westaus2014.jpg",
+        link: "www.plateshack.com/y2k/Western_Australia/westernaustralia.html",
+      },
+    ],
+    regex: generalFormatRegex,
+  },
+  {
+    type: "general",
+    name: "Motorcycle",
+    desc: "Series 1AA-000 - 2ZZ-999",
+    images: [
+      {
+        src: "http://www.plateshack.com/y2k/Western_Australia/wamotorcycle.jpg",
+        link: "www.plateshack.com/y2k/Western_Australia/westernaustralia.html",
+      },
+    ],
+    regex: generalBikeFormatRegex,
+  },
+];
 
 // TODO
 
@@ -26,16 +66,9 @@ export const generalNumberPlateImage =
  *
  */
 
-// https://warego.au/#organisation
-export const generalPlateYears = {
-  A: "1990's",
-  B: "2002",
-  D: "2009",
-  E: "2015",
-  G: "2017",
-  H: "2020",
-  I: "2023",
-};
+/*/
+  General Format (Prefix Matcher)
+/*/
 
 // these are part of the general prpose format
 export const matchGeneralPrefix: PlatePrefixList = {
@@ -82,7 +115,10 @@ export const matchGeneralPrefix: PlatePrefixList = {
   },
 };
 
-// https://warego.au/#district
+/*/
+  Special Plates (Prefix Matcher)
+/*/
+
 // Must be checked before general plate format
 export const specialPlatePrefix: PlatePrefixList = {
   TP: {
@@ -665,9 +701,7 @@ export const orgCharityPlatePrefix: PlatePrefixList = {
 // 98 entries
 export const townShirePlatePrefix: PlatePrefixList = {
   // i added
-  D: {
-    name: "Dowerin",
-  },
+
   KE: {
     name: "Kellerberrin",
   },

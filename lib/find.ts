@@ -11,6 +11,11 @@ import {
   districtPlatePrefix,
 } from "./definitions";
 
+/// fetch data from file at lib/data/data.json
+export function fetchPlateData(): PlateDefintion[] {
+  return require("./data/data.json");
+}
+
 function matchPrefixPlate(cleanPlate: string, prefix: string): boolean {
   const regexMatch = new RegExp(`^${prefix}[-\s]?[0-9]*$`);
 
@@ -62,43 +67,66 @@ function checkGeneralPrefix(
 }
 
 export function findPlate(partialPlate: string): PlateDefintion | null {
+  const plateData: PlateDefintion[] = fetchPlateData();
+  console.log(plateData);
+
   // generalize to uppercase, strip everything special for spoaces
   let cleanPlate = partialPlate.trim().toUpperCase().replace(/\s/g, "");
 
-  const checkSpecialPlatePrefix = checkPlateList(
-    cleanPlate,
-    specialPlatePrefix,
-  );
-  if (checkSpecialPlatePrefix) {
-    return checkSpecialPlatePrefix;
+  /// loop thru the full array and find all entries that match
+  const matchedPlate = plateData.find((entry) => {
+    if (
+      cleanPlate.startsWith(entry.code) &&
+      matchPrefixPlate(cleanPlate, entry.code)
+    ) {
+      return entry;
+    }
+    if (
+      cleanPlate.endsWith(entry.code) &&
+      matchSuffixPlate(cleanPlate, entry.code)
+    ) {
+      return entry;
+    }
+    return null;
+  });
+  if (matchedPlate) {
+    return matchedPlate;
   }
 
-  // check for org/charity plates
-  const checkOrgCharityPlatePrefix = checkPlateList(
-    cleanPlate,
-    orgCharityPlatePrefix,
-  );
-  if (checkOrgCharityPlatePrefix) {
-    return checkOrgCharityPlatePrefix;
-  }
+  // const checkSpecialPlatePrefix = checkPlateList(
+  //   cleanPlate,
+  //   specialPlatePrefix,
+  // );
+  // if (checkSpecialPlatePrefix) {
+  //   return checkSpecialPlatePrefix;
+  // }
 
-  // check for town/shire plates
-  const checkTownShirePlatePrefix = checkPlateList(
-    cleanPlate,
-    townShirePlatePrefix,
-  );
-  if (checkTownShirePlatePrefix) {
-    return checkTownShirePlatePrefix;
-  }
+  // // check for org/charity plates
+  // const checkOrgCharityPlatePrefix = checkPlateList(
+  //   cleanPlate,
+  //   orgCharityPlatePrefix,
+  // );
+  // if (checkOrgCharityPlatePrefix) {
+  //   return checkOrgCharityPlatePrefix;
+  // }
 
-  // check for district plates
-  const checkDistrictPlatePrefix = checkPlateList(
-    cleanPlate,
-    districtPlatePrefix,
-  );
-  if (checkDistrictPlatePrefix) {
-    return checkDistrictPlatePrefix;
-  }
+  // // check for town/shire plates
+  // const checkTownShirePlatePrefix = checkPlateList(
+  //   cleanPlate,
+  //   townShirePlatePrefix,
+  // );
+  // if (checkTownShirePlatePrefix) {
+  //   return checkTownShirePlatePrefix;
+  // }
+
+  // // check for district plates
+  // const checkDistrictPlatePrefix = checkPlateList(
+  //   cleanPlate,
+  //   districtPlatePrefix,
+  // );
+  // if (checkDistrictPlatePrefix) {
+  //   return checkDistrictPlatePrefix;
+  // }
 
   // check for general plate prefixes
   const generalPrefixMatch = checkGeneralPrefix(cleanPlate, matchGeneralPrefix);

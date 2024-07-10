@@ -11,6 +11,7 @@ export type ImageData = {
 };
 
 export type PlateDefintion = {
+  code?: string;
   name: string;
   type?: string;
   images?: ImageData[];
