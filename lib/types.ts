@@ -1,6 +1,13 @@
+export type PlateType =
+  | "general"
+  | "special"
+  | "org_charity"
+  | "town_shire"
+  | "road_district";
+
 export type ImageData = {
   src: string;
-  credit?: string;
+  link?: string;
 };
 
 export type PlateDefintion = {
@@ -10,6 +17,7 @@ export type PlateDefintion = {
   image?: string;
   desc?: string;
   link?: string;
+  regex?: RegExp;
 };
 
 export type PlatePrefixList = {

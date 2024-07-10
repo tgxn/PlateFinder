@@ -136,7 +136,7 @@ export function NavLinks() {
                     href="https://leewardpro.com/articles/licplatefonts/licplate-fonts-aust.html"
                     target="_blank"
                   >
-                    Font
+                    Font Source
                   </a>
                 </li>
               </ul>

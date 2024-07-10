@@ -38,7 +38,7 @@ export const generalPlateYears = {
 };
 
 // these are part of the general prpose format
-export const matchGeneralPrefix = {
+export const matchGeneralPrefix: PlatePrefixList = {
   "1Q": {
     name: "Government",
     desc: "Series 1QAA-000 - 1QSZ-999 and 1QXA-000 - 1QZZ-999",
