@@ -14,7 +14,7 @@ export type PlateDefintion = {
   name: string;
   type?: string;
   // images?: ImageData[];
-  // image?: string;
+  image?: string;
   desc?: string;
   link?: string;
   regex?: RegExp;

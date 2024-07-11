@@ -93,12 +93,23 @@ describe("find known plates", () => {
 
     testExpectArray(testExpect);
   });
-  it("General Plates", () => {
+
+  it("General Plates - Edge Cases", () => {
     const testExpect: [string, string, number?][] = [
       ["1ADD333", "General Plate (1990's)"],
       ["1FFF333", "Vanity Plate Purchase Only"],
       ["IT", "Interchangeable"],
+
+      ["WAC", "Freemasonry - Charity and Fraternity", 0],
       ["WAC", "Commonwealth Games", 1],
+
+      ["CVL", "Charter Vehicle"],
+
+      ["MFC", "CMullewa Football Club", 0],
+      ["MFC", "Charter Vehicle", 1],
+
+      ["WFC", "Watheroo Football Club", 0],
+      ["WFC", "Charter Vehicle", 1],
     ];
 
     testExpectArray(testExpect);

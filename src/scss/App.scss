@@ -169,6 +169,38 @@ body {
 
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
 
+    // should be flex, with elements arrayed centered and going row direction
+    .plateResults {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      // space between
+      gap: 30px;
+
+      // should be flex, with elements arrayed centered and going column direction
+      .plateResultRow {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .plateResultName {
+          font-weight: bold;
+          font-size: 20px;
+          //center
+          text-align: center;
+        }
+
+        .plateResultType {
+          text-align: center;
+        }
+        .plateResultImage {
+          // text-align: center;
+        }
+      }
+    }
+
     // HEADER
     .headerImage {
       width: 140px;

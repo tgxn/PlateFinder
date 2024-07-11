@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 
 import { PlateDefintion, PlatePrefixList } from "../lib/types";
-import { findPlate } from "../lib/find";
+import { findPlates } from "../lib/find";
 
 function NumberPlateInput({
   plateInput,
@@ -34,7 +34,7 @@ function RenderPlateResult({
   plateResult,
 }: {
   plateInput: string;
-  plateResult: PlateDefintion | null;
+  plateResult: PlateDefintion[] | null;
 }) {
   // show nothing found :(
   if (plateInput.length !== 0 && plateResult === null) {
@@ -54,10 +54,35 @@ function RenderPlateResult({
     );
   }
 
+  console.log(plateResult);
+
+  // generate a stacked (row) list of plates with flex
+
+  const plateList = plateResult.map((plate, index) => {
+    let plateImage = null;
+    if (plate.image) {
+      plateImage = <img className="plateResultImage" src={plate.image} />;
+    }
+
+    const plateType = {
+      special: "Special",
+      org_charity: "Organisation / Charity",
+      town_shire: "Town / Shire",
+      road_district: "Road District",
+    };
+
+    return (
+      <div key={index} className="plateResultRow">
+        <span className="plateResultName">{plate.name}</span>
+        <span className="plateResultType">{plateType[plate.type || ""]}</span>
+        {plateImage}
+      </div>
+    );
+  });
+
   return (
     <div className="resultContainer">
-      <span className="headerText">{plateResult.name}</span>
-      <img className="plateExampleImage" src={plateResult.image} />
+      <div className="plateResults">{plateList}</div>
     </div>
   );
 }
@@ -159,11 +184,11 @@ import "./scss/App.scss";
 
 export default function App() {
   const [plateInput, setPlateInput] = useState<string>("");
-  const [plateResult, setPlateResult] = useState<PlateDefintion | null>(null);
+  const [plateResult, setPlateResult] = useState<PlateDefintion[] | null>(null);
 
   // when the input changes, try to find a plate, if found set the other state
   useEffect(() => {
-    setPlateResult(findPlate(plateInput));
+    setPlateResult(findPlates(plateInput));
   }, [plateInput]);
 
   return (
