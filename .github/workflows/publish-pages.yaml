@@ -50,7 +50,7 @@ jobs:
           cache-name: cache-npm
         with:
           path: ./node_modules/
-          key: cache-npm-${{ hashFiles('yarn-lock.json') }}
+          key: cache-npm-${{ hashFiles('yarn.lock') }}
 
       - name: Install Dependencies
         if: steps.cache-npm.outputs.cache-hit != 'true'
