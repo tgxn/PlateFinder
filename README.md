@@ -13,25 +13,20 @@ There are multiple sources for WA plate data, and this project aims to consolida
 
 There are several types of plate, from the most generic only giving us a rough year, to the more specific that can tell us the exact shire or council area.
 
-- general plates
-  `1 ABC 123`
+### types
 
-- special plates
-e.g. "IT" - "TC" - "TAXI" - "CT" etc. (some of these clash with others...)
+these all contain a `code` whcih can be either a prefix or a suffix, but with nothing before it.
 
-- Organisations and Charities
+- special
+things like WPC and TAXI
 
-- Town and Shire Councils
+- org_charity
+like Cat Haven, Perth Zoo etc
 
-http://www.plate-planet.com/images/plates/Fotobatch-188148-kl.gif
-http://www.plate-planet.com/images/plates/Fotobatch-65224-kl.gif
-https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/1990s_Western_Australia_Regional_Plate%2C_89_DE%2C_Denmark.jpg/200px-1990s_Western_Australia_Regional_Plate%2C_89_DE%2C_Denmark.jpg
+- town_shire
 
-- Road Districts
 
-http://www.plate-planet.com/images/plates/Fotobatch-159247-kl.gif
-
-http://www.plateshack.com/y2k/Western_Australia/wa2016CM1416.jpg
+- road_district
 
 
 

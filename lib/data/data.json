@@ -1646,7 +1646,7 @@
   {
     "type": "road_district",
     "code": "CM",
-    "name": "Cunderdin - Meckering (Tammin)",
+    "name": "Cunderdin - Meckering",
     "credit": "https://warego.au/"
   },
   {
@@ -2337,6 +2337,11 @@
     "code": "SCV",
     "name": "Charter Vehicle",
     "image": "http://www.plateshack.com/y2k/Western_Australia/wasmallcharter.jpg"
+  },
+  {
+    "type": "special",
+    "code": "WAC",
+    "name": "Commonwealth Games"
   },
   {
     "type": "org_charity",

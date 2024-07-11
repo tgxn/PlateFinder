@@ -1,5 +1,4 @@
 export type PlateType =
-  | "general"
   | "special"
   | "org_charity"
   | "town_shire"
@@ -14,8 +13,8 @@ export type PlateDefintion = {
   code?: string;
   name: string;
   type?: string;
-  images?: ImageData[];
-  image?: string;
+  // images?: ImageData[];
+  // image?: string;
   desc?: string;
   link?: string;
   regex?: RegExp;

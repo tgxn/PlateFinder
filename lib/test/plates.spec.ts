@@ -1,12 +1,14 @@
+import { PlateDefintion } from "../types";
+
 import {
   generalFormatRegex,
-  specialPlatePrefix,
-  orgCharityPlatePrefix,
-  townShirePlatePrefix,
-  districtPlatePrefix,
+  // specialPlatePrefix,
+  // orgCharityPlatePrefix,
+  // townShirePlatePrefix,
+  // districtPlatePrefix,
 } from "../definitions";
 
-import { findPlate } from "../find";
+import { findPlates } from "../find";
 
 describe("test definitions", () => {
   it("lengths", () => {
@@ -20,23 +22,18 @@ describe("test definitions", () => {
 // i know these plates
 describe("find known plates", () => {
   it("Organisations and Charities", () => {
-    const testExpect = [
+    const testExpect: [string, string][] = [
       ["4WDA", "4WD Associations of WA"],
       ["ASC111", "Armadale Soccer Club"],
       ["REDS 2", "Western Reds Ruby League"],
       ["VPXHS2222", "Vic Park Xavier Hockey Club"],
     ];
 
-    testExpect.forEach(([plate, expected]) => {
-      const result = findPlate(plate);
-      console.log(plate, result);
-      expect(result).not.toBeFalsy();
-      expect(result?.name).toEqual(expected);
-    });
+    testExpectArray(testExpect);
   });
 
   it("Town and Shire Councils", () => {
-    const testExpect = [
+    const testExpect: [string, string][] = [
       // single
       ["B", "Bridgetown"],
       ["B222", "Bridgetown"],
@@ -59,16 +56,11 @@ describe("find known plates", () => {
       ["MRR-222", "Moore River Region"],
     ];
 
-    testExpect.forEach(([plate, expected]) => {
-      const result = findPlate(plate);
-      console.log(plate, result);
-      expect(result).not.toBeFalsy();
-      expect(result?.name).toEqual(expected);
-    });
+    testExpectArray(testExpect);
   });
 
   it("Road Districts", () => {
-    const testExpect = [
+    const testExpect: [string, string][] = [
       // single
       ["A", "Albany"],
       ["A222", "Albany"],
@@ -88,42 +80,42 @@ describe("find known plates", () => {
       ["CMT-222", "Cunderdin - Meckering (Tammin)"],
     ];
 
-    testExpect.forEach(([plate, expected]) => {
-      const result = findPlate(plate);
-      console.log(plate, result);
-      expect(result).not.toBeFalsy();
-      expect(result?.name).toEqual(expected);
-    });
+    testExpectArray(testExpect);
   });
 
   it("General Plates", () => {
-    const testExpect = [
+    const testExpect: [string, string, number?][] = [
       ["1ADD333", "General Plate (1990's)"],
       ["1FFF333", "Vanity Plate Purchase Only"],
       ["IT", "Interchangeable"],
-      ["WAC", "Commonwealth Games"],
+      // ["6SR-123", "Stock Transport"],
     ];
 
-    testExpect.forEach(([plate, expected]) => {
-      const result = findPlate(plate);
-      console.log(plate, result);
-      expect(result).not.toBeFalsy();
-      expect(result?.name).toEqual(expected);
-    });
+    testExpectArray(testExpect);
+  });
+  it("General Plates", () => {
+    const testExpect: [string, string, number?][] = [
+      ["1ADD333", "General Plate (1990's)"],
+      ["1FFF333", "Vanity Plate Purchase Only"],
+      ["IT", "Interchangeable"],
+      ["WAC", "Commonwealth Games", 1],
+    ];
+
+    testExpectArray(testExpect);
   });
 });
 
 // i found some images on the internet of wa plates
 describe("find found plates", () => {
   it("http://www.worldlicenseplates.com/jpglps/AU_WAXX_GI2.jpg", () => {
-    const testExpect = [
+    const testExpect: [string, string, number?][] = [
       ["B-305", "Bridgetown"],
       ["BSN-938", "Busselton"],
       ["CO-1060", "Collie"],
       ["M-1029", "Moora"],
       ["NR4204", "Northampton"],
       ["RA302", "Ravensthorpe"],
-      ["323 DB", "Donnybrook - Balingup"],
+      ["323 DB", "Donnybrook - Balingup", 1],
       ["A 13938", "Albany"],
       ["KM-5259", "Kalamunda"],
       ["35 IR", "Irwin"],
@@ -134,14 +126,10 @@ describe("find found plates", () => {
       ["940 PCC", "Perth City"],
     ];
 
-    testExpect.forEach(([plate, expected]) => {
-      const result = findPlate(plate);
-      console.log(plate, result);
-      expect(result?.name).toEqual(expected);
-    });
+    testExpectArray(testExpect);
   });
   it("https://web.archive.org/web/20120313005521/http://www.regionalwa.com.au/WAinfo/TT_CountryCars.htm", () => {
-    const testExpect = [
+    const testExpect: [string, string, number?][] = [
       ["A", "Albany"],
       ["BY", "Bunbury"],
       ["GNG", "Geraldton - Greenough"],
@@ -154,11 +142,13 @@ describe("find found plates", () => {
       ["AK", "Armadale - Kelmscott"],
       ["AW", "West Arthur"],
       ["AS", "Ashburton"],
-      ["AU", "Augusta - Margaret River"],
+      ["AU", "Augusta", 0],
+      ["AU", "Augusta - Margaret River", 1],
       ["BD", "Boulder"],
       ["BE", "Beverley"],
       ["BT", "Boddington"],
-      ["BU", "Blackwood Upper (Boyup Brook)"],
+      ["BU", "Boyup Brook", 0],
+      ["BU", "Blackwood Upper (Boyup Brook)", 1],
       ["B", "Bridgetown"],
       ["BO", "Brookton"],
       ["BM", "Broome"],
@@ -175,7 +165,8 @@ describe("find found plates", () => {
       ["CW", "Coorow"],
       ["CR", "Corrigin"],
       ["CB", "Cranbrook"],
-      ["CN", "Dryandra Country (Cuballing)"],
+      ["CN", "Dryandra Country", 0],
+      ["CN", "Cuballing", 1],
       ["CD", "Cue Daydawn"],
       ["CM", "Cunderdin - Meckering"],
       ["CMT", "Cunderdin - Meckering (Tammin)"],
@@ -183,14 +174,16 @@ describe("find found plates", () => {
       ["DN", "Dandaragan"],
       ["DA", "Dardanup"],
       ["DE", "Denmark"],
-      ["DB", "Donnybrook - Balingup"],
+      ["DB", "Donnybrook", 0],
+      ["DB", "Donnybrook - Balingup", 1],
       ["D", "Dowerin"],
       ["DU", "Dumbleyung"],
-      ["DS", "Dundas (Norseman)"],
+      ["DS", "Dundas", 0],
+      ["DS", "Dundas (Norseman)", 1],
       ["E", "Esperance"],
       ["EP", "East Pilbara"],
       ["EX", "Exmouth"],
-      ["GU", "Upper Gascoyne"],
+      ["GU", "Gascoyne Upper"],
       ["GG", "Gingin"],
       ["GO", "Goomalling"],
       ["HC", "Hall's Creek"],
@@ -201,7 +194,7 @@ describe("find found plates", () => {
       ["KMC", "Kalgoorlie"],
       ["KA", "Katanning"],
       ["KE", "Kellerberrin"],
-      ["KT", "Kent (Nyabing - Pingrup)"],
+      ["KT", "Shire of Kent (Nyabing / Pingrup)"],
       ["KW", "Shire of Derby / Kimberley West"],
       ["KO", "Kojonup"],
       ["KN", "Kondinin"],
@@ -220,7 +213,8 @@ describe("find found plates", () => {
       ["MO", "Morawa"],
       ["MA", "Mount Magnet"],
       ["MM", "Mount Marshall"],
-      ["MBL", "Mukinbudin - Bonnie Rock - Lake Brown (Brown Lake)"],
+      ["MBL", "Mukinbudin Brown Lake", 0],
+      ["MBL", "Mukinbudin - Bonnie Rock - Lake Brown", 1],
       ["MW", "Mullewa"],
       ["MDG", "Mundaring"],
       ["MU", "Murchison"],
@@ -267,10 +261,27 @@ describe("find found plates", () => {
       ["Y", "York"],
     ];
 
-    testExpect.forEach(([plate, expected]) => {
-      const result = findPlate(plate);
-      console.log(plate, result);
-      expect(result?.name).toEqual(expected);
-    });
+    testExpectArray(testExpect);
   });
 });
+
+function testExpectArray(testExpect: [string, string, number?, string?][]) {
+  testExpect.forEach(([plate, expected, int = 0, string = false]) => {
+    const result = findPlates(plate);
+    console.log(plate, result);
+    expect(result).not.toBeFalsy();
+    expect(result && result[int].name).toEqual(expected);
+    if (string) expect(result && result[int].type).toEqual(string);
+  });
+}
+
+// look in a array response, and try to find one where it has a matching type with expected name
+function containsOneElementWhichIs(
+  result: PlateDefintion[] | null,
+  type: string,
+  name: string,
+) {
+  const found = result && result.find((p) => p.type === type);
+  expect(found).toBeTruthy();
+  expect(found && found.name).toEqual(name);
+}
