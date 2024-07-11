@@ -1827,15 +1827,15 @@
   {
     "type": "road_district",
     "code": "GN",
-    "name": "GN (with dot)",
-    "credit": "https://warego.au/",
-    "image": "/cache/road_district/GN-b375.png"
+    "name": "Gnowangerup (with dot)",
+    "credit": "https://warego.au/"
   },
   {
     "type": "road_district",
     "code": "GN",
-    "name": "GN (without dot)",
-    "credit": "https://warego.au/"
+    "name": "Geraldton (without dot)",
+    "credit": "https://warego.au/",
+    "image": "/cache/road_district/GN-09ec.png"
   },
   {
     "type": "road_district",
