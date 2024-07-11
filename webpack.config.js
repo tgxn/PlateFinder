@@ -2,6 +2,7 @@ const path = require("path");
 const { merge } = require("webpack-merge");
 
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const CopyPlugin = require("copy-webpack-plugin");
 
 const commonConfig = {
   entry: "./src/index.tsx",
@@ -60,8 +61,13 @@ const commonConfig = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: "./public/index.html",
+      template: "./src/index.html",
       favicon: "./public/favicon.png",
+    }),
+    new CopyPlugin({
+      patterns: [
+        { from: "public", to: "" }, //to the dist root directory
+      ],
     }),
   ],
 };
