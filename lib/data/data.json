@@ -866,8 +866,9 @@
   {
     "type": "org_charity",
     "code": "WFC",
-    "name": "Wagin Football Club",
-    "credit": "https://warego.au/"
+    "name": "Watheroo Football Club",
+    "credit": "https://warego.au/",
+    "image": "/cache/org_charity/WFC-0f0b.png"
   },
   {
     "type": "org_charity",
@@ -2307,7 +2308,7 @@
     "type": "special",
     "code": "WPC",
     "name": "Western Power Corporation",
-    "image": "http://www.plate-planet.com/images/plates/Fotobatch-188312-kl.gif"
+    "image": "/cache/special/WPC-5f7c.png"
   },
   {
     "type": "special",
@@ -2318,25 +2319,30 @@
     "type": "special",
     "code": "TC",
     "name": "Touring Coach / Transport Commission",
-    "image": "http://www.plate-planet.com/images/plates/Fotobatch-56433-kl.gif"
+    "image": "/cache/special/TC-5351.png"
   },
   {
     "type": "special",
     "code": "TAXI",
     "name": "Taxi Cab",
-    "image": "http://www.plate-planet.com/images/plates/Fotobatch-77323-kl.gif"
+    "image": "/cache/special/TAXI-4d4a.png"
   },
   {
     "type": "special",
     "code": "CT",
     "name": "Taxi Cab (Non-Metro)",
-    "image": "http://www.plate-planet.com/images/plates/Fotobatch-99458-kl.gif"
+    "image": "/cache/special/CT-6425.png"
   },
   {
     "type": "special",
     "code": "SCV",
     "name": "Charter Vehicle",
-    "image": "http://www.plateshack.com/y2k/Western_Australia/wasmallcharter.jpg"
+    "image": "/cache/special/SCV-72a4.png"
+  },
+  {
+    "type": "special",
+    "code": "CVL",
+    "name": "Charter Vehicle"
   },
   {
     "type": "special",
@@ -2357,73 +2363,73 @@
     "type": "org_charity",
     "code": "ASSET",
     "name": "ASSET SERVICES - Total Buillding Maintenance",
-    "image": "http://www.plate-planet.com/images/plates/Fotobatch-188185-kl.gif"
+    "image": "/cache/org_charity/ASSET-5a72.png"
   },
   {
     "type": "org_charity",
     "code": "AI",
     "name": "Land Speed Challenge",
-    "image": "http://www.plateshack.com/y2k/Western_Australia/waspeedchallenge.jpg"
+    "image": "/cache/org_charity/AI-32d6.png"
   },
   {
     "type": "org_charity",
     "code": "CSC",
     "name": "Western Australia Celtic Club Supporters",
-    "image": "http://www.plateshack.com/y2k/Western_Australia/westauscelticclub.jpg"
+    "image": "/cache/org_charity/CSC-8afc.png"
   },
   {
     "type": "org_charity",
     "code": "LAS",
     "name": "Lasts Transit (Corporate Plate)",
-    "image": "http://www.plateshack.com/y2k/Western_Australia/walaststransit.jpg"
+    "image": "/cache/org_charity/LAS-1486.png"
   },
   {
     "type": "org_charity",
     "code": "MFC",
     "name": "Melbourne Football Club",
-    "image": "http://www.plateshack.com/y2k/Western_Australia/wamelbournefc.jpg"
+    "image": "/cache/org_charity/MFC-9dfe.png"
   },
   {
     "type": "org_charity",
     "code": "RR",
     "name": "Motorcycle Racing Club of Western Australia",
-    "image": "http://www.plateshack.com/y2k/Western_Australia/wamcracingclub.jpg"
+    "image": "/cache/org_charity/RR-9281.png"
   },
   {
     "type": "org_charity",
     "code": "BRS",
     "name": "Pilbara Black Rock Stakes Wheelbarrow race",
-    "image": "http://www.plateshack.com/y2k/Western_Australia/wapilbara.jpg"
+    "image": "/cache/org_charity/BRS-b68a.png"
   },
   {
     "type": "org_charity",
     "code": "RFC",
     "name": "Richmond Football Club",
-    "image": "http://www.plateshack.com/y2k/Western_Australia/warichmondfooty2018.jpg"
+    "image": "/cache/org_charity/RFC-56e0.png"
   },
   {
     "type": "org_charity",
     "code": "YEARS",
     "name": "Western Australia Centenary of Federation plate issued in 2001",
-    "image": "http://www.plateshack.com/y2k/Western_Australia/wafederation.jpg"
+    "image": "/cache/org_charity/YEARS-9862.png"
   },
   {
     "type": "org_charity",
     "code": "RSL",
     "name": "Returned Services League",
-    "image": "http://www.plate-planet.com/images/plates/Fotobatch-188228-kl.gif"
+    "image": "/cache/org_charity/RSL-f8b9.png"
   },
   {
     "type": "org_charity",
     "code": "VC",
     "name": "Variety Club of Western Australia",
-    "image": "http://www.plate-planet.com/images/plates/Fotobatch-188248-kl.gif"
+    "image": "/cache/org_charity/VC-08d0.png"
   },
   {
     "type": "town_shire",
     "code": "HRP",
     "name": "Hutt River Principality",
-    "image": "http://www.plate-planet.com/images/plates/Fotobatch-79455-kl.gif"
+    "image": "/cache/town_shire/HRP-5d1b.png"
   },
   {
     "type": "town_shire",
@@ -2439,12 +2445,12 @@
     "type": "town_shire",
     "code": "GOS",
     "name": "Gosnells City",
-    "image": "http://www.plateshack.com/y2k/Western_Australia/wesausgosnells2021.jpg"
+    "image": "/cache/town_shire/GOS-25e9.png"
   },
   {
     "type": "town_shire",
     "code": "NAT",
     "name": "Cape Naturaliste",
-    "image": "http://www.plateshack.com/y2k/Western_Australia/wacape2017.jpg"
+    "image": "/cache/town_shire/NAT-f689.png"
   }
 ]
