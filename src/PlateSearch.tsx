@@ -38,7 +38,14 @@ function RenderPlateResult({
 }) {
   // show nothing found :(
   if (plateInput.length !== 0 && plateResult === null) {
-    return <div className="resultContainer">No match found</div>;
+    return (
+      <div className="resultContainer">
+        No match found
+        <em className="headerSubText">
+          Custom plates won't be found, as they don't follow a pattern!
+        </em>
+      </div>
+    );
   }
 
   // show info if no entry
