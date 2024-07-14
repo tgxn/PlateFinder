@@ -34,6 +34,9 @@ like Cat Haven, Perth Zoo etc
 
 https://warego.au/#district
 
+- inconsistent (does not list "K"-Karratha, despite it being in the header section...)
+
+
 https://www.transport.wa.gov.au/licensing/district-series-plates.asp
 
 https://leewardpro.com/articles/licplatefonts/licplate-fonts-aust.html

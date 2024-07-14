@@ -1,12 +1,11 @@
 import { PlateDefintion } from "../types";
 
-import {
-  generalFormatRegex,
-  // specialPlatePrefix,
-  // orgCharityPlatePrefix,
-  // townShirePlatePrefix,
-  // districtPlatePrefix,
-} from "../definitions";
+import // generalFormatRegex,
+// specialPlatePrefix,
+// orgCharityPlatePrefix,
+// townShirePlatePrefix,
+// districtPlatePrefix,
+"../definitions";
 
 import { findPlates } from "../find";
 
@@ -85,7 +84,7 @@ describe("find known plates", () => {
 
   it("General Plates", () => {
     const testExpect: [string, string, number?][] = [
-      ["1ADD333", "General Plate (1990's)"],
+      ["1ADD333", "General (~1990's)"],
       ["1FFF333", "Vanity Plate Purchase Only"],
       ["IT", "Interchangeable"],
       // ["6SR-123", "Stock Transport"],
@@ -96,7 +95,7 @@ describe("find known plates", () => {
 
   it("General Plates - Edge Cases", () => {
     const testExpect: [string, string, number?][] = [
-      ["1ADD333", "General Plate (1990's)"],
+      ["1ADD333", "General (~1990's)"],
       ["1FFF333", "Vanity Plate Purchase Only"],
       ["IT", "Interchangeable"],
 
@@ -105,11 +104,30 @@ describe("find known plates", () => {
 
       ["CVL", "Charter Vehicle"],
 
-      ["MFC", "CMullewa Football Club", 0],
-      ["MFC", "Charter Vehicle", 1],
+      ["MFC", 'Mullewa Football Club "Mighty Saints"', 0],
+      ["MFC", "Melbourne Football Club", 1],
 
-      ["WFC", "Watheroo Football Club", 0],
-      ["WFC", "Charter Vehicle", 1],
+      ["WFC", "Wagin Football Club", 0],
+      ["WFC", "Watheroo Football Club", 1],
+    ];
+
+    testExpectArray(testExpect);
+  });
+
+  it("General Plates - General Format", () => {
+    const testExpect: [string, string, number?][] = [
+      ["1ADD333", "General (~1990's)"],
+      ["1IDD333", "General (~2023)"],
+      ["1FFF333", "Vanity Plate Purchase Only"],
+
+      ["1F", "Vanity Plate Purchase Only"],
+      ["1FF", "Vanity Plate Purchase Only"],
+      ["1FFF", "Vanity Plate Purchase Only"],
+      ["1FFF2", "Vanity Plate Purchase Only"],
+      ["1FFF-2", "Vanity Plate Purchase Only"],
+      ["1FFF-62", "Vanity Plate Purchase Only"],
+      ["1FFF-642", "Vanity Plate Purchase Only"],
+      ["1FFF642", "Vanity Plate Purchase Only"],
     ];
 
     testExpectArray(testExpect);
@@ -118,6 +136,35 @@ describe("find known plates", () => {
 
 // i found some images on the internet of wa plates
 describe("find found plates", () => {
+  /// sports teams https://www.waaflplates.com.au/
+  it("https://www.waaflplates.com.au/", () => {
+    const testExpect: [string, string, number?][] = [
+      ["AFC", "Adelaide Crows"],
+      ["BL", "Brisbane Lions"],
+      ["CFC", "Cervantes Football Club", 0],
+      ["CFC", "Carlton Blues", 1],
+      ["CFC", "Collingwood Magpies", 2],
+      ["EFC", "Essendon Bombers"],
+      ["FD", "Fremantle Dockers"],
+      ["GFC", "Geelong Cats"],
+      ["HFC", "Hawthorn Hawks"],
+
+      ["MFC", 'Mullewa Football Club "Mighty Saints"', 0],
+      ["MFC", "Melbourne Football Club", 1],
+
+      ["ROO", "North Melbourne"],
+      ["PORT", "Port Adelaide"],
+      ["RFC", "Richmond Football Club"],
+      ["SKS", "St Kilda"],
+      ["SFC", "Sydney Swans"],
+      // ["SFC", "Sydney Swans"],
+      ["WCE", "West Coast Eagles"],
+      ["WBFC", "Western Bulldogs Football Club"],
+    ];
+
+    testExpectArray(testExpect);
+  });
+
   it("http://www.worldlicenseplates.com/jpglps/AU_WAXX_GI2.jpg", () => {
     const testExpect: [string, string, number?][] = [
       ["B-305", "Bridgetown"],
@@ -139,6 +186,7 @@ describe("find found plates", () => {
 
     testExpectArray(testExpect);
   });
+
   it("https://web.archive.org/web/20120313005521/http://www.regionalwa.com.au/WAinfo/TT_CountryCars.htm", () => {
     const testExpect: [string, string, number?][] = [
       ["A", "Albany"],
@@ -279,10 +327,15 @@ describe("find found plates", () => {
 function testExpectArray(testExpect: [string, string, number?, string?][]) {
   testExpect.forEach(([plate, expected, int = 0, string = false]) => {
     const result = findPlates(plate);
-    console.log(plate, result);
-    expect(result).not.toBeFalsy();
-    expect(result && result[int].name).toEqual(expected);
-    if (string) expect(result && result[int].type).toEqual(string);
+    // console.log(plate, result);
+    try {
+      expect(result).not.toBeFalsy();
+      expect(result && result[int].name).toEqual(expected);
+      if (string) expect(result && result[int].type).toEqual(string);
+    } catch (e) {
+      console.error(plate, result);
+      throw e;
+    }
   });
 }
 
