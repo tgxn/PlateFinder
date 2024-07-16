@@ -8,8 +8,9 @@
     "start:test": "webpack serve --mode development",
     "build": "webpack --mode production",
     "test:lib": "jest lib/**/*.spec.ts",
-    "test:ui": "./node_modules/.bin/playwright test",
-    "test:ui:watch": "./node_modules/.bin/playwright test --ui",
+    "test:ui": "./node_modules/.bin/playwright test tests/",
+    "test:ui:gen": "./node_modules/.bin/playwright codegen",
+    "test:ui:watch": "./node_modules/.bin/playwright test tests/ --ui",
     "fetch": "node lib/source/index.js"
   },
   "dependencies": {
