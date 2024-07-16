@@ -2582,7 +2582,7 @@
   {
     "type": "regex",
     "code": "1Q",
-    "regex": "^(1Q)([A-Z]{1,2})?[-\\s]?([0-9]{1,3})?$",
+    "regex": "^1Q([A-Z]{1}|([A-Z]{2})[-s]?([0-9]{1,3})?)?$",
     "name": "Government Vehicles",
     "desc": "Series 1QAA-000 - 1QSZ-999 and 1QXA-000 - 1QZZ-999",
     "image": "/cache/regex/1Q-7f82.png"
@@ -2590,13 +2590,13 @@
   {
     "type": "regex",
     "code": "1T",
-    "regex": "^(1T)([A-Z]{1,2})?[-\\s]?([0-9]{1,3})?$",
+    "regex": "^1T([A-Z]{1}|([A-Z]{2})[-s]?([0-9]{1,3})?)?$",
     "name": "Trailers"
   },
   {
     "type": "regex",
     "code": "1U",
-    "regex": "^(1U)([A-Z]{1,2})?[-\\s]?([0-9]{1,3})?$",
+    "regex": "^1U([A-Z]{1}|([A-Z]{2})[-s]?([0-9]{1,3})?)?$",
     "name": "Trailers"
   },
   {
@@ -2604,12 +2604,19 @@
     "code": "1Z",
     "name": "Licensed vehicle repairers / mechanics / dealers",
     "image": "/cache/regex/1Z-b153.png",
-    "regex": "^(1Z)([A-Z]{1,2})?[-\\s]?([0-9]{1,3})?$"
+    "regex": "^1Z([A-Z]{1}|([A-Z]{2})[-s]?([0-9]{1,3})?)?$"
+  },
+  {
+    "type": "regex",
+    "code": "1Z",
+    "name": "Licensed vehicle dealers",
+    "image": "/cache/regex/1Z-faf6.png",
+    "regex": "^1Z([A-Z]{1}|([A-Z]{2})[-s]?([0-9]{1,3})?)?$"
   },
   {
     "type": "regex",
     "code": "1Y",
-    "regex": "^(1Y)([A-Z]{1,2})?[-\\s]?([0-9]{1,3})?$",
+    "regex": "^1Y([A-Z]{1}|([A-Z]{2})[-s]?([0-9]{1,3})?)?$",
     "name": "Hire Vehicle",
     "image": "/cache/regex/1Y-56c6.png"
   },
@@ -2617,37 +2624,38 @@
     "type": "regex",
     "code": "1A",
     "name": "General (~1990's)",
-    "regex": "^(1A)([A-Z]{1,2})?[-\\s]?([0-9]{1,3})?$",
+    "regex": "^1A([A-Z]{1}|([A-Z]{2})[-s]?([0-9]{1,3})?)?$",
     "image": "/cache/regex/1A-d5e8.png"
   },
   {
     "type": "regex",
     "code": "1B",
     "name": "General (~2002)",
-    "regex": "^(1B)([A-Z]{1,2})?[-\\s]?([0-9]{1,3})?$"
+    "regex": "^1B([A-Z]{1}|([A-Z]{2})[-s]?([0-9]{1,3})?)?$"
   },
   {
     "type": "regex",
     "code": "1C",
     "name": "General (~2005)",
-    "regex": "^(1C)([A-Z]{1,2})?[-\\s]?([0-9]{1,3})?$"
+    "regex": "^1C([A-Z]{1}|([A-Z]{2})[-s]?([0-9]{1,3})?)?$"
   },
   {
     "type": "regex",
     "code": "1D",
     "name": "General (~2009)",
-    "regex": "^(1D)([A-Z]{1,2})?[-\\s]?([0-9]{1,3})?$"
+    "regex": "^1D([A-Z]{1}|([A-Z]{2})[-s]?([0-9]{1,3})?)?$"
   },
   {
     "type": "regex",
     "code": "1E",
     "name": "General (~2015)",
-    "regex": "^(1E)([A-Z]{1,2})?[-\\s]?([0-9]{1,3})?$"
+    "regex": "^1E([A-Z]{1}|([A-Z]{2})[-s]?([0-9]{1,3})?)?$",
+    "image": "/cache/regex/1E-efa8.png"
   },
   {
     "type": "regex",
     "code": "1F",
-    "regex": "^(1F)([A-Z]{1,2})?[-\\s]?([0-9]{1,3})?$",
+    "regex": "^1F([A-Z]{1}|([A-Z]{2})[-s]?([0-9]{1,3})?)?$",
     "name": "Vanity Plate Purchase Only",
     "image": "/cache/regex/1F-d65f.png"
   },
@@ -2655,24 +2663,24 @@
     "type": "regex",
     "code": "1G",
     "name": "General (~2017)",
-    "regex": "^(1G)([A-Z]{1,2})?[-\\s]?([0-9]{1,3})?$"
+    "regex": "^1G([A-Z]{1}|([A-Z]{2})[-s]?([0-9]{1,3})?)?$"
   },
   {
     "type": "regex",
     "code": "1H",
     "name": "General (~2020)",
-    "regex": "^(1H)([A-Z]{1,2})?[-\\s]?([0-9]{1,3})?$"
+    "regex": "^1H([A-Z]{1}|([A-Z]{2})[-s]?([0-9]{1,3})?)?$"
   },
   {
     "type": "regex",
     "code": "1I",
     "name": "General (~2023)",
-    "regex": "^(1I)([A-Z]{1,2})?[-\\s]?([0-9]{1,3})?$"
+    "regex": "^1I([A-Z]{1}|([A-Z]{2})[-s]?([0-9]{1,3})?)?$"
   },
   {
     "type": "regex",
     "code": "1AA",
-    "regex": "^(1A)([A-Z]{1})[-\\s]?([0-9]{1,3})?$",
+    "regex": {},
     "name": "Motorbike General"
   }
 ]
