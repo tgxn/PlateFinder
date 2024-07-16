@@ -1,22 +1,6 @@
 import { PlateDefintion } from "../types";
 
-import // generalFormatRegex,
-// specialPlatePrefix,
-// orgCharityPlatePrefix,
-// townShirePlatePrefix,
-// districtPlatePrefix,
-"../definitions";
-
 import { findPlates } from "../find";
-
-describe("test definitions", () => {
-  it("lengths", () => {
-    // expect(Object.keys(specialPlatePrefix).length).toBe(5);
-    // expect(Object.keys(orgCharityPlatePrefix).length).toBe(148);
-    // expect(Object.keys(townShirePlatePrefix).length).toBe(100);
-    // expect(Object.keys(districtPlatePrefix).length).toBe(133);
-  });
-});
 
 // i know these plates
 describe("find known plates", () => {
@@ -81,34 +65,15 @@ describe("find known plates", () => {
 
     testExpectArray(testExpect);
   });
+});
 
+describe("identify general format plates", () => {
   it("General Plates", () => {
     const testExpect: [string, string, number?][] = [
       ["1ADD333", "General (~1990's)"],
       ["1FFF333", "Vanity Plate Purchase Only"],
       ["IT", "Interchangeable"],
       // ["6SR-123", "Stock Transport"],
-    ];
-
-    testExpectArray(testExpect);
-  });
-
-  it("General Plates - Edge Cases", () => {
-    const testExpect: [string, string, number?][] = [
-      ["1ADD333", "General (~1990's)"],
-      ["1FFF333", "Vanity Plate Purchase Only"],
-      ["IT", "Interchangeable"],
-
-      ["WAC", "Freemasonry - Charity and Fraternity", 0],
-      ["WAC", "Commonwealth Games", 1],
-
-      ["CVL", "Charter Vehicle"],
-
-      ["MFC", 'Mullewa Football Club "Mighty Saints"', 0],
-      ["MFC", "Melbourne Football Club", 1],
-
-      ["WFC", "Wagin Football Club", 0],
-      ["WFC", "Watheroo Football Club", 1],
     ];
 
     testExpectArray(testExpect);
@@ -128,6 +93,29 @@ describe("find known plates", () => {
       ["1FFF-62", "Vanity Plate Purchase Only"],
       ["1FFF-642", "Vanity Plate Purchase Only"],
       ["1FFF642", "Vanity Plate Purchase Only"],
+    ];
+
+    testExpectArray(testExpect);
+  });
+});
+
+describe("edge case plates", () => {
+  it("General Plates - Edge Cases", () => {
+    const testExpect: [string, string, number?][] = [
+      ["1ADD333", "General (~1990's)"],
+      ["1FFF333", "Vanity Plate Purchase Only"],
+      ["IT", "Interchangeable"],
+
+      ["WAC", "Freemasonry - Charity and Fraternity", 0],
+      ["WAC", "Commonwealth Games", 1],
+
+      ["CVL", "Charter Vehicle"],
+
+      ["MFC", 'Mullewa Football Club "Mighty Saints"', 0],
+      ["MFC", "Melbourne Football Club", 1],
+
+      ["WFC", "Wagin Football Club", 0],
+      ["WFC", "Watheroo Football Club", 1],
     ];
 
     testExpectArray(testExpect);
@@ -337,15 +325,4 @@ function testExpectArray(testExpect: [string, string, number?, string?][]) {
       throw e;
     }
   });
-}
-
-// look in a array response, and try to find one where it has a matching type with expected name
-function containsOneElementWhichIs(
-  result: PlateDefintion[] | null,
-  type: string,
-  name: string,
-) {
-  const found = result && result.find((p) => p.type === type);
-  expect(found).toBeTruthy();
-  expect(found && found.name).toEqual(name);
 }
