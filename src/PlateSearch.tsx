@@ -141,6 +141,9 @@ export function NavLinks() {
             </p>
           </div>
           <div>
+            Special thanks to Cel for the help testing
+          </div>
+          <div>
             <p>
               Made by{" "}
               <a href="https://github.com/tgxn" target="_blank">
