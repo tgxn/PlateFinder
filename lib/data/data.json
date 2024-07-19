@@ -2547,6 +2547,36 @@
   },
   {
     "type": "town_shire",
+    "code": "BAY",
+    "name": "City of Bayswater"
+  },
+  {
+    "type": "town_shire",
+    "code": "BKH",
+    "name": "Bakers Hill"
+  },
+  {
+    "type": "town_shire",
+    "code": "EPS",
+    "name": "Shire of East Pilbara"
+  },
+  {
+    "type": "town_shire",
+    "code": "GNP",
+    "name": "Gnowangerup Shire"
+  },
+  {
+    "type": "town_shire",
+    "code": "MEL",
+    "name": "City Of Melville"
+  },
+  {
+    "type": "town_shire",
+    "code": "YLP",
+    "name": "Yarloop"
+  },
+  {
+    "type": "town_shire",
     "code": "HRP",
     "name": "Hutt River Principality",
     "image": "/cache/town_shire/HRP-5d1b.png"

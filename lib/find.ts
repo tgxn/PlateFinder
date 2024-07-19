@@ -91,7 +91,7 @@ export function findPlates(partialPlate: string): PlateDefintion[] | null {
     // console.error("checking", cleanPlate, regex);
 
     if (regex.test(cleanPlate)) {
-      console.log("found regex in matchedRegex", plate);
+      // console.log("found regex in matchedRegex", plate);
       return true;
     }
 

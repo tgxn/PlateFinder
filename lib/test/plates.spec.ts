@@ -175,6 +175,176 @@ describe("find found plates", () => {
     testExpectArray(testExpect);
   });
 
+  it("http://www.plate-planet.com/bodypages/au-aust-wasshigr.html", () => {
+    const testExpect: [string, string, number?][] = [
+      ["117AK", "Armadale - Kelmscott", 0],
+      ["7798AS", "Ashburton", 0],
+      ["888AW", "West Arthur", 0],
+      ["888AW", "West Arthur", 1],
+      ["28BAY", "City of Bayswater", 0],
+      ["1998BB", "Bremer Bay", 0],
+      ["74BCC", "Belmont - City of Opportunity", 0],
+      ["181BCC", "Belmont - City of Opportunity", 0],
+      ["440BE", "Beverley", 0],
+      ["255BK", "Bruce Rock", 0],
+      ["BKH253", "Bakers Hill", 0],
+      ["530 BM", "Broome", 0],
+      ["648 BM", "Broome", 1],
+      ["682BO", "Brookton", 0],
+      ["123BSN", "Busselton", 0],
+      ["0652BT", "Boddington", 0],
+      ["922BU", "Boyup Brook", 0],
+      ["922BU", "Blackwood Upper (Boyup Brook)", 1],
+      ["622BWK", "Brunswick Junction", 0],
+      ["174BY", "Bunbury", 0],
+      ["351 CA", "Carnamah", 0],
+      ["111CB", "Cranbrook", 0],
+      ["20CBAY", "Cowaramup Bay", 0],
+      ["65 CD", "Cue Daydawn", 0],
+      ["96CH", "Chittering", 0],
+      ["33CMT", "Cunderdin - Meckering (Tammin)", 0],
+      ["200CN", "Dryandra Country", 0],
+      ["200CN", "Cuballing", 1],
+      ["200CN", "Cuballing", 1],
+      ["2CO", "Collie", 0],
+      ["448CP", "Capel", 0],
+      ["757CR", "Corrigin", 0],
+      ["99CV", "Chapman Valley", 0],
+      ["518CW", "Coorow", 0],
+      ["307D", "Dowerin", 0],
+      ["52DA", "Dardanup", 0],
+      ["3800DB", "Donnybrook", 0],
+      ["3800DB", "Donnybrook - Balingup", 1],
+      ["3800DB", "Donnybrook - Balingup", 1],
+      ["26 DE", "Denmark", 0],
+      ["26 DE", "Denmark", 1],
+      ["26 DE", "Denmark", 1],
+      ["31DS", "Dundas", 0],
+      ["31DS", "Dundas (Norseman)", 1],
+      ["31DS", "Dundas (Norseman)", 1],
+      ["899E", "Esperance", 0],
+      ["20EPS", "Shire of East Pilbara", 0],
+      ["96EX", "Exmouth", 0],
+      ["96EX", "Exmouth", 1],
+      ["96EX", "Exmouth", 1],
+      ["FR007", "Frankland River", 0],
+      ["00G", "Greenough", 0],
+      ["1700GG", "Gingin", 0],
+      ["1960GN", "Gnowangerup (with dot)", 0],
+      ["1960GN", "Geraldton (without dot)", 1],
+      ["1960GN", "Geraldton (without dot)", 1],
+      ["94GNP", "Gnowangerup Shire", 0],
+      ["61H", "Harvey", 0],
+      ["86IR", "Irwin", 0],
+      ["86IR", "Irwin", 1],
+      ["86IR", "Irwin", 1],
+      ["1996KA", "Katanning", 0],
+      ["1995KD", "Koorda", 0],
+      ["54KE", "Kellerberrin", 0],
+      ["3KM", "Kalamunda", 0],
+      ["3KM", "Kalamunda", 1],
+      ["3KM", "Kalamunda", 1],
+      ["145KM", "Kalamunda", 0],
+      ["145KM", "Kalamunda", 1],
+      ["145KM", "Kalamunda", 1],
+      ["88KT", "Shire of Kent (Nyabing / Pingrup)", 0],
+      ["88KT", "Kent (Nyabing - Pingrup)", 1],
+      ["88KT", "Kent (Nyabing - Pingrup)", 1],
+      ["308KTY", "Kununoppin - Trayning - Yelbeni", 0],
+      ["42KU", "Kulin", 0],
+      ["2426KW", "Shire of Derby / Kimberley West", 0],
+      ["2426KW", "Kimberley West", 1],
+      ["2426KW", "Kimberley West", 1],
+      ["2000LA", "Laverton", 0],
+      ["253M", "Moora", 0],
+      ["100MBL", "Mukinbudin Brown Lake", 0],
+      ["100MBL", "Mukinbudin - Bonnie Rock - Lake Brown", 1],
+      ["100MBL", "Mukinbudin - Bonnie Rock - Lake Brown", 1],
+      ["2244MD", "Merredin", 0],
+      ["800MDG", "Mundaring", 0],
+      ["540MEL", "City Of Melville", 0],
+      ["400MH", "Mandurah", 0],
+      ["1022MI", "Mingenew", 0],
+      ["278MK", "Meekatharra", 0],
+      ["1995MK", "Meekatharra", 0],
+      ["6472MM", "Mount Marshall", 0],
+      ["6472MM", "Mount Marshall (Mandiga, Welbungin)", 1],
+      ["6472MM", "Mount Marshall (Mandiga, Welbungin)", 1],
+      ["56MO", "Morawa", 0],
+      ["31MP", "Mosman Park", 0],
+      ["1994MR", "Moora", 0],
+      ["15MW", "Mullewa", 0],
+      ["15MW", "Mullewa", 1],
+      ["15MW", "Mullewa", 1],
+      ["66MY", "Murray (Pinjarra)", 0],
+      ["211N", "Northam", 0],
+      ["29NAT", "Cape Naturaliste", 0],
+      ["364NR", "Northampton", 0],
+      ["256PCC", "Perth City", 0],
+      ["72PH", "Port Hedland", 0],
+      ["94PJ", "Perenjori", 0],
+      ["1998PL", "Plantagenet (Mount Barker)", 0],
+      ["1998PL", "Plantagenet (Mount Barker)", 1],
+      ["1998PL", "Plantagenet (Mount Barker)", 1],
+      ["98Q", "Quairading", 0],
+      ["98Q", "Quairading", 1],
+      ["98Q", "Quairading", 1],
+      ["SUBI500", "Subiaco", 0],
+      ["20SV", "HSV Owners Club", 0],
+      ["20SV", "Swan Valley", 1],
+      ["20SV", "Swan Valley", 1],
+      ["125SW", "Swan", 0],
+      ["93SW", "Swan", 0],
+      ["44TA", "Tambellup", 0],
+      ["44TA", "Tambellup", 1],
+      ["44TA", "Tambellup", 1],
+      ["90TS", "Three Springs", 0],
+      ["90TS", "Three Springs", 1],
+      ["90TS", "Three Springs", 1],
+      ["VLY29", "Varley", 0],
+      ["555VP", "Victoria Plains", 0],
+      ["555VP", "Victoria Plains", 1],
+      ["555VP", "Victoria Plains", 1],
+      ["37VPk", "Victoria Park", 0],
+      ["234W", "Wagin (Woolorama)", 0],
+      ["234W", "Wagin", 1],
+      ["234W", "Wagin", 1],
+      ["1234WA", "Manjimup Shire (Warren)", 0],
+      ["1234WA", "Manjimup (Warren)", 1],
+      ["1234WA", "Manjimup (Warren)", 1],
+      ["28WB", "Wongan - Ballidu", 0],
+      ["868WK", "Wickepin", 0],
+      ["16WL", "Williams", 0],
+      ["16WL", "Williams", 1],
+      ["16WL", "Williams", 1],
+      ["159WM", "Wyalkatchem", 0],
+      ["14WR", "Waroona", 0],
+      ["14WR", "Waroona", 1],
+      ["14WR", "Waroona", 1],
+      ["33WT", "Westonia", 0],
+      ["25YL", "Yilgarn", 0],
+      ["91YLP", "Yarloop", 0],
+    ];
+
+    testExpectArray(testExpect, false);
+  });
+
+  // it("http://www.worldlicenseplates.com/jpglps/AU_WAXX_SIV.jpg", () => {
+  //   const testExpect: [string, string, number?][] = [
+  //     ["AR000P", "OLD"],
+  //     ["AR - 000P", "OLD"],
+  //     ["RJT302P", "OLD"],
+  //     ["RJT - 302P", "OLD"],
+  //     ["VT135P", "OLD"],
+  //     ["VT-135P", "OLD"],
+  //     ["DJ666", "OLD"],
+  //     ["DJ.666", "OLD"],
+  //     ["SAP- 002-P", "OLD"],
+  //   ];
+
+  //   testExpectArray(testExpect);
+  // });
+
   it("https://web.archive.org/web/20120313005521/http://www.regionalwa.com.au/WAinfo/TT_CountryCars.htm", () => {
     const testExpect: [string, string, number?][] = [
       ["A", "Albany"],
@@ -312,17 +482,31 @@ describe("find found plates", () => {
   });
 });
 
-function testExpectArray(testExpect: [string, string, number?, string?][]) {
+function testExpectArray(
+  testExpect: [string, string, number?, string?][],
+  shouldLog = false,
+) {
+  let newArr: [string, string, number?, string?][] = [];
+
   testExpect.forEach(([plate, expected, int = 0, string = false]) => {
     const result = findPlates(plate);
+
+    if (!result) newArr.push([plate, "UNKNOWN"]);
+
+    if (result) newArr.push([plate, result[int].name, int]);
+    if (result && result[int + 1])
+      newArr.push([plate, result[int + 1].name, int + 1]);
+
     // console.log(plate, result);
     try {
       expect(result).not.toBeFalsy();
       expect(result && result[int].name).toEqual(expected);
       if (string) expect(result && result[int].type).toEqual(string);
     } catch (e) {
-      console.error(plate, result);
+      console.log(plate, result);
       throw e;
     }
   });
+
+  if (shouldLog) console.log(JSON.stringify(newArr, null, 2));
 }
