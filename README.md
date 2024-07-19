@@ -2,12 +2,16 @@
 
 # Plate Number Lookup
 
-Simple UI to lookup where a Western Australian license plate is from.
+Simple UI to lookup details on Western Australian license plates.
 
 ![alt text](image.png)
 
-
 There are multiple sources for WA plate data, and this project aims to consolidate them into a single source, with a simple UI to search them.
+
+Main Sources
+- (warego.au)[https://warego.au/]
+- (plate-planet.com)[http://www.plate-planet.com/bodypages/au-aust-wasshigr.html]
+- (transport.wa.gov.au)[https://www.transport.wa.gov.au/licensing/district-series-plates.asp]
 
 ## Data Format
 
