@@ -345,6 +345,16 @@ describe("find found plates", () => {
   //   testExpectArray(testExpect);
   // });
 
+  // it("things i have seen on the road", () => {
+  //   const testExpect: [string, string, number?][] = [
+  //     ["NBFC6", "idk"],
+  //     ["SSLSC99", "idk"],
+  //     ["KLS99", "idk"],
+  //   ];
+
+  //   testExpectArray(testExpect);
+  // });
+
   it("https://web.archive.org/web/20120313005521/http://www.regionalwa.com.au/WAinfo/TT_CountryCars.htm", () => {
     const testExpect: [string, string, number?][] = [
       ["A", "Albany"],
